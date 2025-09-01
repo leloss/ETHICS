@@ -1,0 +1,7 @@
+control_id,ethics_pillar,description,nist_ai_rmf,sr11_7,iso_23894,gdpr_glba  
+C-THRESH,Credibility,Threshold selection procedure documented and justified,MAP/TM/RM,Model Development,7.4.2 Data & Model,GDPR-5(1)(a)  
+C-CALI,Credibility,Calibration tested and within limits (Brier/ECE),MAP/MG/RM,Model Validation,7.5.5 Performance,""  
+F-PARITY,Fairness,Equal opportunity and SPD within thresholds,MP/MG,Model Validation,7.5.7 Bias,GDPR-22(3)  
+H-HITL,Humans,Human override and adverse action workflows,M,Governance,7.6 Human oversight,GDPR-22  
+S-SBOM,Security,SBOM and vuln scanning in CI,MG,Governance,8.2 Security,"GLBA-Safeguards"  
+T-TRACE,Imputability,Versioning and audit trails,M,Model Risk Governance,7.7 Documentation,""  

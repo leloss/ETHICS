@@ -1,0 +1,45 @@
+name: Security and SBOM  
+  
+on:  
+  push:  
+    branches: [ main, master ]  
+  schedule:  
+    - cron: "0 6 * * 1"  # weekly on Monday 06:00 UTC  
+  
+permissions:  
+  contents: read  
+  security-events: write  
+  
+jobs:  
+  sbom-and-scan:  
+    runs-on: ubuntu-latest  
+    steps:  
+      - name: Checkout  
+        uses: actions/checkout@v4  
+  
+      - name: Generate SBOM (SPDX)  
+        uses: anchore/sbom-action@v0  
+        with:  
+          path: .  
+          output-file: sbom.spdx.json  
+  
+      - name: Upload SBOM artifact  
+        uses: actions/upload-artifact@v4  
+        with:  
+          name: sbom  
+          path: sbom.spdx.json  
+  
+      - name: Trivy FS scan (vulnerabilities, config issues)  
+        uses: aquasecurity/trivy-action@0.24.0  
+        with:  
+          scan-type: "fs"  
+          ignore-unfixed: true  
+          format: "sarif"  
+          output: "trivy-results.sarif"  
+          vuln-type: "os,library"  
+          severity: "CRITICAL,HIGH,MEDIUM"  
+  
+      - name: Upload SARIF to code scanning  
+        uses: github/codeql-action/upload-sarif@v3  
+        with:  
+          sarif_file: trivy-results.sarif  

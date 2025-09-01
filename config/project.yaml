@@ -1,0 +1,37 @@
+project:  
+  name: "{{PROJECT_NAME}}"  
+  owners: ["{{TEAM_EMAIL}}"]  
+  risk_tier: "High"  # Low/Medium/High  
+  regulatory_scope: ["ECOA/Reg B", "FCRA", "UDAAP"]  
+  
+data:  
+  eval_path: "data/processed/eval.csv"   # columns: y_true, y_score, group (optional y_pred)  
+  baseline_path: "data/processed/baseline_eval.csv"  # optional for drift  
+  
+model:  
+  threshold: 0.5  
+  positive_class: 1  
+  
+acceptance_gates:  
+  performance:  
+    roc_auc_min: 0.70  
+    pr_auc_min: 0.30  
+    f1_min: 0.50  
+    coverage_min: 0.95   # fraction of samples with valid predictions  
+  calibration:  
+    brier_max: 0.20  
+    ece_max: 0.03  
+  fairness:  
+    spd_abs_max: 0.10         # absolute statistical parity difference  
+    tpr_gap_max: 0.05  
+    fpr_gap_max: 0.05  
+  drift:  
+    psi_max: 0.20             # on y_score; skip if no baseline  
+  
+monitoring:  
+  cadence_days: 30  
+  drift_retrain_trigger: true  
+  fairness_review_cadence_days: 90  
+  
+artifacts:  
+  reports_dir: "reports"  

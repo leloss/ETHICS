@@ -1,0 +1,16 @@
+data:  
+  path: "data/processed/eval.csv"  
+  label_col: "y_true"  
+  score_col: "y_score"  
+  pred_col: null   # optional; if null, use threshold to create y_pred  
+  group_col: "group"  
+model:  
+  threshold: 0.5  
+metrics:  
+  # Fairness metrics to compute; gates compared to project.yaml acceptance_gates.fairness  
+  compute: ["selection_rate", "tpr", "fpr", "spd", "tpr_gap", "fpr_gap"]  
+groups:  
+  # Optionally enumerate expected groups to check coverage  
+  expected: []  
+output:  
+  dir: "reports"  
