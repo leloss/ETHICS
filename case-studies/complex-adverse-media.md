@@ -2,7 +2,7 @@
   
 ## Background  
   
-In 2017, the Financial Crime Risk & Compliance (FCRC) team of a multinational commercial bank purchased a third-party Adverse Media Monitoring (AMM) solution to automate risk flagging during KYC onboarding and periodic customer reviews.  
+In 2019, the Financial Crime Risk & Compliance (FCRC) team of a multinational commercial bank purchased a third-party Adverse Media Monitoring (AMM) solution to automate risk flagging during KYC onboarding and periodic customer reviews.  
   
 **The vendor claimed:**  
 - **Coverage:** 95% of relevant media outlets  
@@ -10,7 +10,7 @@ In 2017, the Financial Crime Risk & Compliance (FCRC) team of a multinational co
 - **Recall:** >85% for adverse/risk mentions  
 - **End-to-End integration:** seamless API into case management systems  
   
-By 2022, the AMM solution was deeply embedded into onboarding workflows, periodic reviews, and regulatory reporting, with 5+ years of operational history. The annual vendor license cost exceeded $3.5M.  
+By 2024, the AMM solution was deeply embedded into onboarding workflows, periodic reviews, and regulatory reporting, with 5+ years of operational history. The annual vendor license cost exceeded $3.5M.  
   
 ---  
   
