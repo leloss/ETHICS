@@ -48,7 +48,7 @@ The FCRC team deployed ETHICS not to replace, but to layer governance, visibilit
   
 ---  
   
-### 1. Effectiveness  
+### 1. Enhancing (Effectiveness)  
   
 **Baseline:**  
 - Vendor-reported precision: 92%  
@@ -66,7 +66,7 @@ The FCRC team deployed ETHICS not to replace, but to layer governance, visibilit
   
 ---  
   
-### 2. Transparency (Black-Box to Glass-Box)  
+### 2. Transparent (Black-Box to Glass-Box)  
   
 **Baseline Issues:**  
 - No insight into which sources/articles triggered alerts.  
@@ -82,7 +82,7 @@ The FCRC team deployed ETHICS not to replace, but to layer governance, visibilit
   
 ---  
   
-### 3. Human-Centricity  
+### 3. Human-Centered  
   
 **Baseline Issues:**  
 - AMM alerts written in robotic, jargon-heavy summaries.  
@@ -98,7 +98,7 @@ The FCRC team deployed ETHICS not to replace, but to layer governance, visibilit
   
 ---  
   
-### 4. Interpretability / Accountability  
+### 4. Imputable (Accountability & Traceability)  
   
 **Baseline Issues:**  
 - Hard to attribute errors (false alarms vs. missed coverage).  
@@ -116,7 +116,7 @@ The FCRC team deployed ETHICS not to replace, but to layer governance, visibilit
   
 ---  
   
-### 5. Confidence & Trust  
+### 5. Credible (Confidence & Trust)  
   
 **Baseline:**  
 - Despite high vendor KPIs, internally the AMM was not trusted.  
@@ -133,7 +133,7 @@ The FCRC team deployed ETHICS not to replace, but to layer governance, visibilit
   
 ---  
   
-### 6. Security & Privacy  
+### 6. Secure (Security & Privacy)  
   
 **Baseline Issues:**  
 - Sensitive customer PII (names, IDs) sent to third-party APIs for enrichment.  

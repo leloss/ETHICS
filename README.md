@@ -7,12 +7,16 @@
   
 This repo provides actionable, lightweight artifacts and quality gates:  
 - Artifacts: model card, adverse action reason card, data card, validation report  
+- Governance scoring: ETHICS AI System X-Ray (42 checkpoints -> ATS/PTS/IGB band)  
 - Reproducibility: pinned deps, scripts, CI, report artifacts  
 - Quality gates: data/drift (Evidently), fairness (Fairlearn), SBOM/security (Trivy)  
 
 
-Reference:  
-[1] Leandro A. Loss, *ETHICS: A Six-Pillar Framework for Responsible AI in Finance*, The 2nd Workshop on LLMs and Generative AI for Finance (ACM ICAIF'25) [under review], 2025.
+The six pillars: **E**nhancing, **T**ransparent, **H**uman-Centered, **I**mputable, **C**redible, **S**ecure.  
+
+References:  
+[1] Leandro A. Loss, *ETHICS: A Six-Pillar Framework for Responsible AI in Highly Regulated Industries*, 2026.  
+[2] Leandro A. Loss, *ETHICS: A Six-Pillar Framework for Responsible AI in Finance*, The 2nd Workshop on LLMs and Generative AI for Finance (ACM ICAIF'25) [under review], 2025.
 
 
 Quick start:  
@@ -20,13 +24,15 @@ Quick start:
 2) Put your evaluation data at data/processed/eval.csv with columns: y_true, y_score, group (and optional y_pred).  
 3) Edit config/project.yaml and config/fairness_config.yaml (set acceptance thresholds).  
 4) Fill templates in /templates (leave placeholders if not yet known).  
-5) Run locally:   
+5) Score the ETHICS AI System X-Ray: copy templates/checklists/ethics_xray.csv per system/version and fill the score column (0-3, evidence-based). Complete it jointly (business owner, technical lead, risk/compliance, and the people who use or supervise the system) rather than alone.  
+6) Run locally:   
    - pip install -r requirements.txt  
    - python scripts/run_quality_checks.py  
    - python scripts/run_fairness.py
    - python scripts/run_accuracy_metrics.py
-6) Push to GitHub; CI will publish reports to the Actions artifacts.  
-7) Link artifacts in PRs to support reviews and audits.  
+   - python scripts/run_ethics_xray.py --xray templates/checklists/ethics_xray.csv
+7) Push to GitHub; CI will publish reports to the Actions artifacts.  
+8) Link artifacts in PRs to support reviews and audits.  
   
 Open-source tools:  
 - Fairlearn: https://fairlearn.org  
@@ -49,6 +55,8 @@ ETHICS/
 │  ├─ validation_report.md  
 │  └─ checklists/  
 │     ├─ rai_checklist.md  
+│     ├─ ethics_xray.md       # AI System X-Ray: 42 checkpoints, scale, IGB bands  
+│     ├─ ethics_xray.csv      # machine-readable scoring sheet  
 │     └─ controls_map.csv  
 ├─ config/  
 │  ├─ project.yaml  
@@ -59,8 +67,9 @@ ETHICS/
 ├─ reports/.gitkeep        # CI will write HTML/JSON here  
 ├─ scripts/  
 │  ├─ run_quality_checks.py  
-│  └─ run_fairness.py  
-│  └─ run_accuracy_metrics.py  
+│  ├─ run_fairness.py  
+│  ├─ run_accuracy_metrics.py  
+│  └─ run_ethics_xray.py  
 ├─ .github/workflows/  
 │  ├─ quality-gates.yml  
 │  └─ security.yml  
@@ -75,3 +84,4 @@ ETHICS/
 Notes:  
 - Not legal advice. Align adverse action content with counsel and policy.  
 - Do not commit raw PII or licensed data. Use secrets and approved data paths.  
+- Never commit private keys or credentials. Pre-commit runs detect-private-key; keep SSH keys in ~/.ssh, outside the repo.  

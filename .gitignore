@@ -16,3 +16,13 @@ reports/
 .DS_Store  
 .vscode/  
 .idea/  
+
+# Secrets and keys (never commit)
+id_github
+id_github.pub
+*.pem
+*.key
+id_rsa*
+id_ed25519*
+*.p12
+*.pfx

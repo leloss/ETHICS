@@ -16,7 +16,7 @@ Replacing the system was **not feasible** due to contractual commitments and hea
 
 ## Initial Issues Identified  
 
-### 1. **Performance (Effectiveness & Efficiency)**  
+### 1. **Enhancing (Performance & Efficiency)**  
 - High **false positives (74%)**:  
   - Example: “Juan Carlos Perez” matched to **over 200 entities** across different geographies.  
 - **False negatives (missed matches)**:  
@@ -24,26 +24,26 @@ Replacing the system was **not feasible** due to contractual commitments and hea
 - **Duplication of effort**: Analysts had to manually merge entities across 5+ systems.  
 - **Average case resolution time**: **28 minutes**, versus the expected **15 minutes SLA**.  
 
-### 2. **Transparency & Explainability**  
+### 2. **Transparent (Explainability)**  
 - Analysts could not see **which attributes (name, DOB, address)** contributed most to match scores.  
 - ER tool produced a **single opaque “match score”** (e.g., 0.83) without rationale.  
 - Analysts struggled to justify decisions in **audit or regulatory reviews**.  
 
-### 3. **Human-Centricity**  
+### 3. **Human-Centered (Analyst Workflow)**  
 - Analysts overwhelmed by **long candidate lists** (>100 possible matches for common names).  
 - No **prioritization** of likely matches based on context (e.g., industry, geography).  
 - User frustration: repetitive manual validation, with **surveyed satisfaction at 39%**.  
 
-### 4. **Accountability & Traceability**  
+### 4. **Imputable (Accountability & Traceability)**  
 - No **audit logs** of which fields drove the resolution process.  
 - Decisions varied across teams because there was **no standard way to challenge or override matches**.  
 - Escalations to compliance committees lacked **evidence-based reasoning**.  
 
-### 5. **Trustworthiness**  
+### 5. **Credible (Trust & Reliability)**  
 - Front-line bankers avoided relying on the ER tool, instead **cross-checking manually on public websites**.  
 - Regulators questioned the bank’s ability to demonstrate **consistent, risk-based client due diligence**.  
 
-### 6. **Privacy & Security**  
+### 6. **Secure (Privacy & Data Controls)**  
 - Sensitive client identifiers (passport numbers, national IDs) sent to **external ER vendor servers**.  
 - Lack of clear **data retention policies**: some records remained accessible beyond legal limits.  
 - Risk of **data leakage** during bulk file uploads.  
@@ -54,7 +54,7 @@ Replacing the system was **not feasible** due to contractual commitments and hea
 
 The institution applied the **ETHICS framework** to improve its ER process without replacing the vendor solution.  
 
-### Step 1: Performance Optimization  
+### Step 1: Enhancing — Performance Optimization  
 - Introduced **attribute weighting**: name (40%), DOB (30%), address (20%), nationality (10%).  
 - Created **golden datasets** of 500 known high-risk cases to test match performance.  
 - After tuning:  
@@ -62,7 +62,7 @@ The institution applied the **ETHICS framework** to improve its ER process witho
   - **Recall (true positive coverage)** increased from **64% → 88%**.  
   - Average case resolution time dropped from **28 min → 16 min (-43%)**.  
 
-### Step 2: Transparency & Explainability  
+### Step 2: Transparent — Explainability  
 - Implemented **LIME (Local Interpretable Model-Agnostic Explanations)** for match scoring:  
   - Highlighted which fields most influenced the score.  
   - Example: A match score of 0.83 explained as:  
@@ -72,25 +72,25 @@ The institution applied the **ETHICS framework** to improve its ER process witho
     - Nationality: +0.07  
 - Analysts now had **clear evidence for audit trails and regulatory reviews**.  
 
-### Step 3: Human-Centric Enhancements  
+### Step 3: Human-Centered — Analyst Workflow Enhancements  
 - Redesigned match lists with **ranked prioritization** (most likely matches first).  
 - Added **context filters** (e.g., same country, same sector).  
 - Introduced **color-coded scoring** (green = high match, yellow = medium, red = low).  
 - User satisfaction improved from **39% → 77%** after redesign.  
 
-### Step 4: Accountability & Traceability  
+### Step 4: Imputable — Accountability & Traceability  
 - Implemented **decision logs** showing:  
   - Match score breakdown.  
   - Analyst override (accept/reject) and rationale.  
   - Timestamped audit trail linked to case files.  
 - Standardized escalation packages with **traceable evidence** improved regulatory interactions.  
 
-### Step 5: Trust Restoration  
+### Step 5: Credible — Trust Restoration  
 - Monthly **ETHICS scorecards** included metrics on false positives, recall, and analyst satisfaction.  
 - Adoption increased: reliance on manual checks dropped by **58%**.  
 - Compliance officers regained confidence in the **consistency and auditability** of ER processes.  
 
-### Step 6: Privacy & Security Controls  
+### Step 6: Secure — Privacy & Security Controls  
 - Implemented **data minimization**: only hashed identifiers shared with vendor.  
 - Enforced **automatic deletion** of client data after 90 days in vendor systems.  
 - Added **encryption-in-transit and at-rest** for all ER-related data.  
