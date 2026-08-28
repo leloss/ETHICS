@@ -12,6 +12,17 @@ Two layers, used together:
 - **MRM artifacts** ask whether the institution controls its model risk — inventory,
   materiality, effective challenge, appetite, and change.
 
+## Start here
+
+| You are | Start with |
+|---|---|
+| A small team, a startup, or governing a Tier 3–4 model | [`mrm/mrm_lite.md`](mrm/mrm_lite.md) — one page, one afternoon |
+| A regulated institution, or governing a Tier 1–2 model | [`mrm/README.md`](mrm/README.md) — the full methodology |
+| Assessing a system that already exists | [`checklists/ethics_xray.md`](checklists/ethics_xray.md) — score it, then act on the band |
+
+Filled artifacts live in `models/{{MODEL_ID}}/`, not in `templates/`. See
+[`../models/README.md`](../models/README.md).
+
 ## By lifecycle stage
 
 | Stage | Artifact | Who produces it | Feeds |
@@ -28,9 +39,11 @@ Two layers, used together:
 | Validation | [`mrm/validation_plan.md`](mrm/validation_plan.md) | Validator | Scope agreed before testing |
 | Validation | [`validation_report.md`](validation_report.md) | Validator | Approval decision |
 | Validation | [`mrm/model_findings_log.csv`](mrm/model_findings_log.csv) | Validator | Remediation, appetite, committee |
+| Approval | [`mrm/model_approval_record.md`](mrm/model_approval_record.md) | Approval authority | What is approved, conditions, exceptions |
 | Approval | [`mrm/governance_and_raci.md`](mrm/governance_and_raci.md) | 2LOD / committee | Who decides, and against what appetite |
 | Production | [`mrm/ongoing_monitoring_plan.md`](mrm/ongoing_monitoring_plan.md) | Model owner | Breach actions, recertification |
 | Change | [`mrm/change_control.md`](mrm/change_control.md) | Model owner + validator | Re-validation, re-tiering, retirement |
+| Incident | [`mrm/model_incident_management.md`](mrm/model_incident_management.md) | Model owner + 2LOD | Remediation for affected people, findings, control changes |
 | Third party | [`mrm/third_party_model_due_diligence.md`](mrm/third_party_model_due_diligence.md) | Contract owner + validator | Reliance level permitted |
 | Cross-cutting | [`checklists/controls_map.csv`](checklists/controls_map.csv) | 2LOD | Regulatory crosswalk |
 

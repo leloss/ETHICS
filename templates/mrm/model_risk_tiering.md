@@ -43,6 +43,7 @@ lowered only with documented rationale and committee approval. Record either her
 
 | Control | Tier 1 | Tier 2 | Tier 3 | Tier 4 |
 |---|---|---|---|---|
+| Governance artifact set | Full | Full | [Lite](mrm_lite.md) acceptable | [Lite](mrm_lite.md) |
 | Development document | Full | Full | Standard | Short form |
 | Model card | Required | Required | Required | Required |
 | Data card | Required | Required | Required | Simplified |
@@ -56,10 +57,17 @@ lowered only with documented rationale and committee approval. Record either her
 | Recertification | Annual | Annual | Every 2 years | Every 3 years |
 | Change control | Full re-validation on material change | Full on material change | Assessment on material change | Notification |
 | Adverse action / appeal artifact | Required if decisions affect people | Required if applicable | Required if applicable | If applicable |
+| Approval record | Required | Required | Required | Lite sign-off |
+| Incident plan | Required | Required | Required | Named suspender + rollback |
 | Aggregate risk reporting | Every cycle | Every cycle | Exceptions only | Exceptions only |
 
 Tiers 1 and 2 may not deploy with open High or Critical validation findings. Tier 3 may
 deploy with open Medium findings under a dated remediation plan.
+
+Where a Tier 1 model cannot reach the Strong band before a deadline that cannot move, the
+route is a time-bound exception with compensating controls under
+[governance_and_raci.md](governance_and_raci.md), recorded in the
+[approval record](model_approval_record.md) — not a quiet re-reading of the band.
 
 ## Inherent, control, and residual risk
 

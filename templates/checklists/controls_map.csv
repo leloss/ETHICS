@@ -18,3 +18,5 @@ M-RECERT,Credible,Periodic recertification confirms the approval still holds,MEA
 M-TPRM,Secure,Third-party model due diligence with independent testing on institution data,GOVERN/MANAGE,Vendor Models,8.2 Security,GLBA-Safeguards  
 M-APPET,Imputable,Model risk appetite defined with observable limits and breach actions,GOVERN,Model Risk Governance,6.3 Objectives,""  
 M-RETIRE,Imputable,Decommissioning evidenced; retained decisions and appeals addressed,MANAGE,Model Risk Governance,8.5 Retirement,""  
+M-APPR,Imputable,Approval decision recorded separately from validation opinion with binding conditions,GOVERN,Model Approval,6.4 Risk acceptance,""  
+M-INC,Imputable,Model incidents and near misses recorded; affected decisions remediated,MANAGE,Model Risk Governance,8.6 Incident,GDPR-33  

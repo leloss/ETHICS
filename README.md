@@ -8,7 +8,8 @@
 This repo provides actionable, lightweight artifacts and quality gates:  
 - Artifacts: model card, GenAI system card, adverse action reason card, data card, validation report  
 - Governance scoring: ETHICS System X-Ray (42 checkpoints -> ATS/PTS/IGB band)  
-- ML model risk management: inventory, risk tiering, development documentation, validation, findings, monitoring, change control, third-party due diligence  
+- ML model risk management: inventory, risk tiering, development documentation, validation, approval, findings, monitoring, incidents, change control, third-party due diligence  
+- MRM Lite: one-page governance for small teams and low-tier models, with triggers for when to move up  
 - Reproducibility: pinned deps, scripts, CI, report artifacts  
 - Quality gates: data/drift (Evidently), fairness (Fairlearn), SBOM/security (Trivy)  
 
@@ -25,7 +26,7 @@ Quick start:
 2) Put your evaluation data at data/processed/eval.csv with columns: y_true, y_score, group (and optional y_pred).  
 3) Edit config/project.yaml, config/accuracy_metrics.yaml and config/fairness_config.yaml (set acceptance thresholds).  
    - In project.yaml, fill human_baseline (what the current process achieves) and cost_benefit before claiming improvement. A gain measured against nothing is not a gain.  
-4) Fill templates in /templates — start at [templates/README.md](templates/README.md), which says which artifact applies at which lifecycle stage. Assign a MODEL_ID at intake and carry it across every artifact.  
+4) Fill templates — start at [templates/README.md](templates/README.md). Small team or low-tier model? [templates/mrm/mrm_lite.md](templates/mrm/mrm_lite.md) is one page and covers the essentials. Regulated institution or Tier 1-2 model? [templates/mrm/README.md](templates/mrm/README.md) is the full methodology. Assign a MODEL_ID at intake, carry it across every artifact, and keep filled copies in [models/](models/).  
 5) Score the ETHICS System X-Ray: copy templates/checklists/ethics_xray.csv per system/version and fill the score column (0-3, evidence-based). Complete it jointly (business owner, technical lead, risk/compliance, and the people who use or supervise the system) rather than alone.  
 6) Run locally:   
    - pip install -r requirements.txt  
@@ -65,15 +66,20 @@ ETHICS/
 │     └─ controls_map.csv  
 │  └─ mrm/                  # ML model risk management (SR 11-7 / SS1/23 shaped)  
 │     ├─ README.md           # methodology, lifecycle, ETHICS <-> SR 11-7 crosswalk  
+│     ├─ mrm_lite.md         # one-page version for small teams / Tier 3-4  
 │     ├─ model_inventory.csv  
 │     ├─ model_risk_tiering.md  
 │     ├─ model_development_document.md  
 │     ├─ validation_plan.md  
 │     ├─ model_findings_log.csv  
+│     ├─ model_approval_record.md  
 │     ├─ ongoing_monitoring_plan.md  
+│     ├─ model_incident_management.md  
 │     ├─ change_control.md  
 │     ├─ governance_and_raci.md  
 │     └─ third_party_model_due_diligence.md  
+├─ models/                  # filled artifacts, one directory per MODEL_ID  
+│  └─ README.md  
 ├─ config/  
 │  ├─ project.yaml           # gates, human baseline, cost/benefit, oversight monitoring  
 │  ├─ accuracy_metrics.yaml  # detailed accuracy report and its gates  

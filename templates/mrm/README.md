@@ -9,6 +9,11 @@ non-deterministic generative output, and workflows where a human is nominally in
 or misused model output. It arises two ways: the model may be wrong, or the model may be
 right and used wrongly. Both are in scope here.
 
+> **Small team, or a low-tier model?** Start with [`mrm_lite.md`](mrm_lite.md) — one page
+> covering the governance that prevents most harm, with explicit triggers for when to move
+> up to the full set. The depth below is proportionate to Tier 1 and 2 models; applying it
+> everywhere is how frameworks get abandoned.
+
 ## Scope: what counts as a model
 
 A model is any quantitative method that applies statistical, economic, financial, or
@@ -47,12 +52,15 @@ monitoring, and escalation. Covered by
 [`governance_and_raci.md`](governance_and_raci.md),
 [`model_inventory.csv`](model_inventory.csv),
 [`model_risk_tiering.md`](model_risk_tiering.md),
-[`ongoing_monitoring_plan.md`](ongoing_monitoring_plan.md), and
+[`ongoing_monitoring_plan.md`](ongoing_monitoring_plan.md),
+[`model_approval_record.md`](model_approval_record.md),
+[`model_incident_management.md`](model_incident_management.md), and
 [`change_control.md`](change_control.md).
 
 ## Lifecycle
 
-Each stage names the artifact that must exist before the stage can close.
+Each stage names the artifact that must exist before the stage can close. Stage 8 is
+event-driven; the rest run in order.
 
 | Stage | Gate question | Artifact | Owner |
 |---|---|---|---|
@@ -60,11 +68,12 @@ Each stage names the artifact that must exist before the stage can close.
 | 2. Development | Is it conceptually sound and defensibly built? | [Development document](model_development_document.md), model/data/GenAI cards | Model developer |
 | 3. Pre-validation self-assessment | Would this survive challenge? | [ETHICS System X-Ray](../checklists/ethics_xray.md) + [RAI checklist](../checklists/rai_checklist.md) | Joint |
 | 4. Validation | Does it withstand effective challenge? | [Validation plan](validation_plan.md) → [validation report](../validation_report.md) → [findings log](model_findings_log.csv) | Independent validator |
-| 5. Approval | Is residual risk within appetite? | Approval record + conditions | Approver per [RACI](governance_and_raci.md) |
+| 5. Approval | Is residual risk within appetite? | [Approval record](model_approval_record.md) | Approver per [RACI](governance_and_raci.md) |
 | 6. Production use | Is it still performing and still used as approved? | [Monitoring plan](ongoing_monitoring_plan.md), monitoring reports | Model owner |
 | 7. Change | Is this change material, and does it require re-validation? | [Change control record](change_control.md) | Model owner + validator |
-| 8. Periodic review | Does approval still hold? | Re-tiering + recertification | Validator |
-| 9. Decommissioning | Is retirement clean and evidenced? | [Decommissioning record](change_control.md) | Model owner |
+| 8. Incident | Did something go wrong, and who is put right? | [Incident record](model_incident_management.md) | Model owner + 2LOD |
+| 9. Periodic review | Does approval still hold? | Re-tiering + recertification | Validator |
+| 10. Decommissioning | Is retirement clean and evidenced? | [Decommissioning record](change_control.md) | Model owner |
 
 Third-party models enter at stage 1 and run
 [`third_party_model_due_diligence.md`](third_party_model_due_diligence.md) alongside

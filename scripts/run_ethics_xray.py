@@ -138,7 +138,7 @@ def summarize(df):
 
 def write_markdown(summary, path):
     lines = [
-        "# ETHICS AI System X-Ray — Result",
+        "# ETHICS System X-Ray — Result",
         "",
         f"- **Absolute Total Score (ATS):** {summary['ats']} / {summary['ats_max']}",
         f"- **Percentage Total Score (PTS):** {summary['pts']}%",
