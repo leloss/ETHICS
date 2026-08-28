@@ -5,4 +5,4 @@ F-PARITY,Credible,Equal opportunity and SPD within thresholds,MP/MG,Model Valida
 H-HITL,Human-Centered,Human override and adverse action workflows,M,Governance,7.6 Human oversight,GDPR-22  
 S-SBOM,Secure,SBOM and vuln scanning in CI,MG,Governance,8.2 Security,"GLBA-Safeguards"  
 T-TRACE,Imputable,Versioning and audit trails,M,Model Risk Governance,7.7 Documentation,""  
-G-XRAY,All pillars,ETHICS AI System X-Ray scored with evidence; IGB band recorded per version,GOVERN/MAP/MEASURE,Model Risk Governance,6 Governance,""
+G-XRAY,All pillars,ETHICS System X-Ray scored with evidence; IGB band recorded per version,GOVERN/MAP/MEASURE,Model Risk Governance,6 Governance,""

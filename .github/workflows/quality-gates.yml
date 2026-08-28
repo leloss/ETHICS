@@ -40,6 +40,18 @@ jobs:
           python scripts/run_fairness.py --fairness-config config/fairness_config.yaml --project-config config/project.yaml  
         continue-on-error: false  
   
+      - name: Run accuracy metrics  
+        run: |  
+          python scripts/run_accuracy_metrics.py --config config/accuracy_metrics.yaml  
+        continue-on-error: false  
+  
+      # The X-Ray gates on governance evidence, not model output. It fails the build when  
+      # the sheet is unscored, so an unfilled assessment cannot pass as a zero-risk one.  
+      - name: Score ETHICS System X-Ray  
+        run: |  
+          python scripts/run_ethics_xray.py --xray templates/checklists/ethics_xray.csv  
+        continue-on-error: false  
+  
       - name: Upload reports  
         if: always()  
         uses: actions/upload-artifact@v4  

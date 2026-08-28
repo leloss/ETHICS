@@ -1,0 +1,42 @@
+# Config for scripts/run_accuracy_metrics.py
+#
+# Deliberately paired with config/project.yaml: this file drives the detailed accuracy
+# report (confusion matrix, threshold sweep, curves), while project.yaml holds the
+# headline performance, calibration, fairness, and drift gates. Keep thresholds and
+# data paths consistent between the two.
+
+data:
+  path: "data/processed/eval.csv"   # columns: y_true, y_score (optional y_pred)
+  label_col: "y_true"
+  score_col: "y_score"
+  pred_col: "y_pred"                # used if present; otherwise derived from threshold
+  # prob_cols: ["p_class_0", "p_class_1", "p_class_2"]   # multiclass only
+
+model:
+  task: "binary"                    # "binary" or "multiclass"; omit to infer from labels
+  threshold: 0.5
+  positive_class: 1
+  beta: 1.0                         # F-beta weighting; >1 favors recall, <1 favors precision
+  # labels: [0, 1, 2]               # multiclass label order
+
+output:
+  dir: "reports/accuracy"
+  save_curves: true
+
+# Gate keys are <metric>_min or <metric>_max, where <metric> is any key in the summary:
+# accuracy, balanced_accuracy, precision, recall, specificity, fpr, fnr, ppv, npv,
+# prevalence, positive_rate, f1, f_beta, roc_auc, pr_auc, brier, log_loss, mcc, kappa.
+#
+# E2 (Enhancing): pair every headline metric with one that could disconfirm it. Gating
+# recall alone invites a threshold that buys it with false positives, so fpr_max is gated
+# beside it; roc_auc_min is paired with pr_auc_min because ROC-AUC flatters imbalanced
+# populations. Set these from policy and error cost, not from what the model happens to score.
+acceptance_gates:
+  metrics:
+    roc_auc_min: 0.70
+    pr_auc_min: 0.30
+    f1_min: 0.50
+    recall_min: 0.60
+    precision_min: 0.40
+    fpr_max: 0.20
+    brier_max: 0.20

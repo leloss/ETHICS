@@ -6,11 +6,45 @@ project:
   
 data:  
   eval_path: "data/processed/eval.csv"   # columns: y_true, y_score, group (optional y_pred)  
-  baseline_path: "data/processed/baseline_eval.csv"  # optional for drift  
+  drift_baseline_path: "data/processed/baseline_eval.csv"  # score distribution for PSI; NOT a human baseline  
+  baseline_path: "data/processed/baseline_eval.csv"  # deprecated alias of drift_baseline_path  
   
 model:  
   threshold: 0.5  
   positive_class: 1  
+  
+# E3 (Enhancing): the comparison that decides whether the system improved the work is
+# against the process it replaces, not against zero. A model that beats no baseline has
+# only been measured, not justified. Record the incumbent process numbers here, measured
+# on the same population, and state how they were obtained.
+human_baseline:  
+  process_description: "{{CURRENT_PROCESS: e.g. manual review by 2 credit officers}}"  
+  measured_on: "{{SAMPLE/PERIOD, must match eval population}}"  
+  method: "{{how measured: retrospective audit, dual review, sampled QA}}"  
+  metrics:  
+    roc_auc: null            # leave null if the human process yields no score  
+    precision: null  
+    recall: null  
+    decision_time_minutes: null  
+    rework_rate: null  
+  required_uplift:  
+    # The gain the system must show over the human baseline to justify deployment.
+    # Set from policy. "Non-inferior" is a legitimate target when the benefit is time,
+    # but then the time gain must be evidenced under monitoring.oversight below.
+    recall_min_delta: 0.0  
+    precision_min_delta: 0.0  
+  
+# E6 (Enhancing): "saves time" is not a benefit statement. Record what the gain is, what
+# it costs, what burden remains, and what NEW burden appears elsewhere. Prevalence matters:
+# fixing most of a rare problem may still be a marginal institutional benefit.
+cost_benefit:  
+  problem_prevalence: "{{share of the full workflow population this system addresses}}"  
+  expected_loss_before: null  
+  expected_loss_after: null  
+  cost_per_false_positive: null  
+  cost_per_false_negative: null  
+  burden_created_elsewhere: "{{team, task, estimated volume — e.g. +N exceptions/week to ops}}"  
+  net_benefit_statement: "{{who gains what, net of the above}}"  
   
 acceptance_gates:  
   performance:  
@@ -32,6 +66,36 @@ monitoring:
   cadence_days: 30  
   drift_retrain_trigger: true  
   fairness_review_cadence_days: 90  
+  
+  # E2 (Enhancing): counter-metrics. Statistical complements (PR-AUC beside ROC-AUC,
+  # Brier beside accuracy) do not detect burden shifting. These do. Track them or the
+  # institution measures only what is easy and locally favourable.
+  counter_metrics:  
+    rework_rate: {source: "{{system}}", cadence_days: 30, alert_above: null}  
+    downstream_qa_burden: {source: "{{system}}", cadence_days: 30, alert_above: null}  
+    complaint_volume: {source: "{{system}}", cadence_days: 30, alert_above: null}  
+    exception_volume_by_team: {source: "{{system}}", cadence_days: 30, alert_above: null}  
+  
+  # Human-Centered: oversight decays silently. Design-time approval of override criteria
+  # does not evidence that authority, time, evidence, and clarity still hold in production.
+  # A collapsing override rate is not agreement; it is the signal to investigate.
+  oversight:  
+    override_rate: {cadence_days: 30, alert_below: null, alert_above: null}  
+    override_upheld_rate: {cadence_days: 90, alert_below: null}   # were overrides right?  
+    median_review_seconds_per_case: {cadence_days: 30, alert_below: null}  
+    cases_per_reviewer_per_shift: {cadence_days: 30, alert_above: null}  
+    appeals_volume: {cadence_days: 90}  
+    appeals_upheld_rate: {cadence_days: 90, alert_above: null}     # high = systematic error  
+    review_qa_sample_rate: 0.05  
+  
+  # Human-Centered / Credible: parity is not error-cost distribution. SPD and TPR/FPR gaps
+  # say who is selected; they do not say who absorbs the harm when the system is wrong.
+  # Record error cost by group where the consequence is material and unevenly borne.
+  error_cost_distribution:  
+    groups: []                       # defaults to fairness group_col if empty  
+    fn_consequence: "{{what a missed case costs the affected person}}"  
+    fp_consequence: "{{what a false flag costs the affected person}}"  
+    review_cadence_days: 90  
   
 artifacts:  
   reports_dir: "reports"  

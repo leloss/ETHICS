@@ -1,4 +1,5 @@
-# ETHICS-Based Responsible AI Self-Assessment ("AI System X-Ray")
+# ETHICS System X-Ray
+### ETHICS-Based Responsible AI Self-Assessment
 
 ## Model / System Metadata
 

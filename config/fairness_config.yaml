@@ -8,6 +8,9 @@ model:
   threshold: 0.5  
 metrics:  
   # Fairness metrics to compute; gates compared to project.yaml acceptance_gates.fairness  
+  # NOTE: these measure who is SELECTED. They do not measure who absorbs the harm when the  
+  # system is wrong. Record error cost by group in project.yaml monitoring.error_cost_distribution  
+  # and in the model card's "Impact on Affected People" section.  
   compute: ["selection_rate", "tpr", "fpr", "spd", "tpr_gap", "fpr_gap"]  
 groups:  
   # Optionally enumerate expected groups to check coverage  
