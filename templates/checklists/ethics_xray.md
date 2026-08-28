@@ -132,9 +132,24 @@ python scripts/run_ethics_xray.py --xray templates/checklists/ethics_xray.csv
 ```
 
 This writes `reports/ethics_xray_summary.json` and `reports/ethics_xray.md` with the ATS,
-PTS, per-pillar breakdown, IGB band, and recommended action. Use `--min-pts` (and
-optionally `--min-pillar-pts`) to fail the run when a band floor is not met, so the X-Ray
-can gate a release the same way the performance and fairness checks do.
+PTS, per-pillar breakdown, IGB band, and recommended action.
+
+To gate a release the way the performance and fairness checks do, use the three-part gate:
+
+```
+python scripts/run_ethics_xray.py --xray models/MDL-0001/ethics_xray.csv   --min-pts 65 --min-pillar-pts 50 --require-nonzero T7,I1,I5,C1,S1,S2,H2,H5
+```
+
+- `--min-pts` — overall band floor
+- `--min-pillar-pts` — per-pillar floor, so strength in five pillars cannot carry a
+  collapse in the sixth
+- `--require-nonzero` — checkpoints where a zero is not compensable at any aggregate score
+
+Thresholds by tier, and the reasoning behind them, are in
+[`../mrm/model_risk_tiering.md`](../mrm/model_risk_tiering.md). Note that several
+checkpoints score on operating history (C4, S4, S6, H6) and cannot reach 3 before a system
+has run; the deployment floor is set accordingly, with the higher band due at first
+recertification.
 
 Adapt the checkpoint list to your environment and domain; if you add or remove
 checkpoints, the ATS maximum changes accordingly and the scorer adjusts the percentage

@@ -29,8 +29,9 @@ under [change_control.md](change_control.md), not a matter of local discretion.
 |---|---|---|
 | Validation opinion | [validation report](../validation_report.md) | {{Approve / with conditions / restricted / reject}} |
 | Tier and residual risk | [tiering](model_risk_tiering.md) | {{tier, residual rating}} |
-| ETHICS System X-Ray | [X-Ray](../checklists/ethics_xray.md) | PTS {{...}}%, band {{...}} |
-| Minimum band required for this tier | [tiering](model_risk_tiering.md) | {{...}} — met? {{Y/N}} |
+| ETHICS System X-Ray | [X-Ray](../checklists/ethics_xray.md) | PTS {{...}}%, band {{...}}, lowest pillar {{...}}% |
+| X-Ray gate for this tier | [tiering](model_risk_tiering.md) | Overall {{Y/N}} · pillar floor {{Y/N}} · non-negotiable checkpoints {{Y/N}} |
+| Band due at first recertification | [tiering](model_risk_tiering.md) | {{...}}% by {{DATE}} — tracked as a condition below |
 | Open findings | [findings log](model_findings_log.csv) | Critical {{n}}, High {{n}}, Medium {{n}} |
 | Benefit evidence | [`config/project.yaml`](../../config/project.yaml) | Uplift vs. human baseline: {{...}} |
 | Net cost/benefit | [`config/project.yaml`](../../config/project.yaml) | {{...}} |

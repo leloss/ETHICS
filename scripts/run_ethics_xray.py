@@ -126,6 +126,7 @@ def summarize(df):
     ]
 
     return {
+        "scores": {str(r["checkpoint_id"]): int(r["score"]) for _, r in df.iterrows()},
         "ats": ats,
         "ats_max": ats_max,
         "pts": pts,
@@ -167,7 +168,7 @@ def write_markdown(summary, path):
     path.write_text("\n".join(lines), encoding="utf-8")
 
 
-def main(xray_path, out_dir, min_pts, min_pillar_pts):
+def main(xray_path, out_dir, min_pts, min_pillar_pts, require_nonzero):
     df = load_xray(xray_path)
     summary = summarize(df)
 
@@ -178,6 +179,14 @@ def main(xray_path, out_dir, min_pts, min_pillar_pts):
     write_markdown(summary, out_dir / "ethics_xray.md")
 
     failures = []
+    # Non-negotiable checkpoints: a zero here is not compensable by strength elsewhere,
+    # so it fails the gate independently of the aggregate and pillar scores.
+    for cid in require_nonzero:
+        if cid not in summary["scores"]:
+            failures.append(f"Required checkpoint '{cid}' not present in the sheet")
+        elif summary["scores"][cid] == 0:
+            failures.append(f"{cid} scored 0 (non-negotiable checkpoint)")
+
     if min_pts is not None and summary["pts"] < min_pts:
         failures.append(f"PTS {summary['pts']}% < required {min_pts}%")
     if min_pillar_pts is not None:
@@ -186,7 +195,8 @@ def main(xray_path, out_dir, min_pts, min_pillar_pts):
                 failures.append(f"{pillar} PTS {v['pts']}% < required {min_pillar_pts}%")
 
     status = "PASS" if not failures else "FAIL"
-    print(json.dumps({"status": status, "failures": failures, **summary}, indent=2))
+    reported = {k: v for k, v in summary.items() if k != "scores"}
+    print(json.dumps({"status": status, "failures": failures, **reported}, indent=2))
     if failures:
         raise SystemExit(1)
 
@@ -207,5 +217,14 @@ if __name__ == "__main__":
         default=None,
         help="Fail if any single pillar's Percentage Total Score is below this value.",
     )
+    ap.add_argument(
+        "--require-nonzero",
+        default="",
+        help=(
+            "Comma-separated checkpoint IDs that may not score 0 (e.g. T7,I1,I5,C1,S1,S2). "
+            "See templates/mrm/model_risk_tiering.md for the tiered gate."
+        ),
+    )
     args = ap.parse_args()
-    main(args.xray, args.out_dir, args.min_pts, args.min_pillar_pts)
+    required = [c.strip() for c in args.require_nonzero.split(",") if c.strip()]
+    main(args.xray, args.out_dir, args.min_pts, args.min_pillar_pts, required)

@@ -75,7 +75,8 @@ Appetite is stated so that a breach is observable rather than debatable.
 | Unregistered models discovered | {{0}} | Discovery review | Register and tier within {{N}} days |
 | Fully automated decisions on Tier 1 populations | {{...}} | Inventory | {{...}} |
 | Aggregate exposure to a single vendor model | {{...}} | Inventory | {{...}} |
-| Models deployed below their minimum X-Ray band | {{0}} | X-Ray reports | {{...}} |
+| Models deployed below their X-Ray gate for tier | {{0}} | X-Ray reports | {{...}} |
+| Models past their due date for the recertification band | {{≤ N}} | X-Ray reports | {{...}} |
 
 - Appetite set by: {{...}} | Reviewed: {{frequency}}
 - Exceptions: granted by {{...}}, time-bound to {{max duration}}, recorded with rationale,

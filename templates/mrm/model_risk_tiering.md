@@ -49,7 +49,7 @@ lowered only with documented rationale and committee approval. Record either her
 | Data card | Required | Required | Required | Simplified |
 | GenAI system card (if applicable) | Required | Required | Required | Required |
 | ETHICS System X-Ray | Full 42, joint review | Full 42, joint review | Full 42, owner + 1 | Owner self-score |
-| Minimum X-Ray band to deploy | Strong | Acceptable | Acceptable | Deficient with plan |
+| X-Ray gate to deploy | See below | See below | See below | See below |
 | Independent validation | Full, pre-deployment | Full, pre-deployment | Targeted review | Peer review |
 | Effective challenge by 2LOD | Required | Required | Required | Not required |
 | Approval authority | Model risk committee | Committee delegate | 2LOD head | Business owner + 1 |
@@ -64,8 +64,52 @@ lowered only with documented rationale and committee approval. Record either her
 Tiers 1 and 2 may not deploy with open High or Critical validation findings. Tier 3 may
 deploy with open Medium findings under a dated remediation plan.
 
-Where a Tier 1 model cannot reach the Strong band before a deadline that cannot move, the
-route is a time-bound exception with compensating controls under
+## The X-Ray gate
+
+A single aggregate band is the wrong gate on its own, for two reasons. Several checkpoints
+score on operating history — C4 *regularly reported*, S6 *continuous*, S4 *regular
+penetration testing*, H6 *feedback loop integrated* — and cannot honestly reach 3 before a
+system has run. And an aggregate permits compensation: 41 strong checkpoints can carry a
+zero on encryption or on the appeal route, which is exactly the trade the band should
+forbid.
+
+The gate is therefore three conditions, all of which must hold.
+
+| | Tier 1 | Tier 2 | Tier 3 | Tier 4 |
+|---|---|---|---|---|
+| **1. Overall PTS at deployment** | ≥ 65% (Acceptable) | ≥ 65% (Acceptable) | ≥ 55% | ≥ 40% (Deficient) with plan |
+| **2. No pillar below** | 50% | 50% | 40% | — |
+| **3. Non-negotiable checkpoints at 0** | None permitted | None permitted | None permitted | Documented and accepted |
+| **Band required by first recertification** | 85% (Strong) | 75% | 65% (Acceptable) | 55% |
+
+The deployment bar is set where an honest pre-deployment score can reach it, and the Strong
+band becomes an approval condition with a date rather than a launch blocker that is waived
+in practice. A control whose exception is routine is not a control.
+
+### Non-negotiable checkpoints
+
+Zero on any of these blocks deployment at Tier 1–3 regardless of the aggregate, because a
+zero here cannot be compensated by strength elsewhere.
+
+| Checkpoint | Why it cannot be traded away |
+|---|---|
+| T7 — Justification reproducible and traceable at decision time | A decision that cannot be reconstructed cannot be governed, defended, or corrected |
+| I1 — Full audit trail of model activity | Without it, every later control is unevidenced |
+| I5 — Governance roles assigned and embodied | An unowned model has no one to act when it fails |
+| C1 — Independent validation possible | If challenge is impossible, the validation opinion is decoration |
+| S1 — Data encrypted at rest and in transit | Confidentiality failure alone makes a regulated system unfit |
+| S2 — Access controlled and logged | Unbounded access defeats every other security control |
+| H2 — Easy and safe override mechanisms *(where a human is in the decision path)* | Oversight without a usable override is nominal |
+| H5 — Appeals process for customers *(where decisions affect people)* | An affected person with no route to challenge has no remedy |
+
+Enforce the full gate with:
+
+```
+python scripts/run_ethics_xray.py --xray models/MDL-0001/ethics_xray.csv   --min-pts 65 --min-pillar-pts 50 --require-nonzero T7,I1,I5,C1,S1,S2,H2,H5
+```
+
+Where a deployment date cannot move and the gate is not met, the route is a time-bound
+exception with compensating controls under
 [governance_and_raci.md](governance_and_raci.md), recorded in the
 [approval record](model_approval_record.md) — not a quiet re-reading of the band.
 
