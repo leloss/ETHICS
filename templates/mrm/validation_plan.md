@@ -55,6 +55,11 @@ test the model where the developer had least incentive to look.
   development document says it is used. Method={{shadowing, case sampling, interviews}}
 - **Oversight reality**: override rate, review time per case, and whether reviewers can
   articulate grounds for disagreement. Method={{...}}
+- **Error catchability**: seed known-wrong outputs into review and measure whether reviewers
+  catch them. If they cannot, the review step is shifting liability rather than controlling
+  risk, and that is a finding regardless of how the model scores. Method={{...}}
+- **Deference test**: does the interface present evidence before recommendation, and does
+  acceptance require comparable effort to rejection? Method={{...}}
 - **Population the developer did not test**: {{...}}
 - **Adversarial and edge conditions**: {{...}}
 
@@ -79,10 +84,14 @@ Findings are recorded in [model_findings_log.csv](model_findings_log.csv) with t
 | Severity | Meaning | Effect on approval |
 |---|---|---|
 | Critical | Model is not fit for its intended use | Deployment blocked |
-| High | Material weakness affecting reliance | Blocked for Tier 1–2; restricted use otherwise |
+| High | Material weakness affecting reliance | See the tier table below |
 | Medium | Weakness requiring remediation | Deploy with dated remediation plan |
 | Low | Improvement opportunity | Track, no deployment effect |
 | Observation | No action required | Record only |
+
+The interaction of severity and tier is set in one place — the *Open findings at
+deployment* table in [model_risk_tiering.md](model_risk_tiering.md). These definitions say
+what a severity means; that table says what it blocks.
 
 ## Outcome
 

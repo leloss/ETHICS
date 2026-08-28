@@ -64,10 +64,15 @@ that have actually held up in practice.
 | H1 | Human-in-the-loop oversight enabled | | | |
 | H2 | Easy and safe override mechanisms exist | | | |
 | H3 | Alerts are actionable with enough context and instructions | | | |
-| H4 | Interfaces support usability defined by known design patterns | | | |
+| H4 | Interfaces reduce deference and anchoring | | | |
 | H5 | Appeals process for customers formally put in place | | | |
 | H6 | User feedback loop integrated to training/enhancement process | | | |
-| H7 | Social impact assessed and disclosed | | | |
+| H7 | Social and safety impact assessed and disclosed | | | |
+
+Safety is tested here rather than as a standalone concern: safety in regulated AI is
+ultimately harm to persons, and H7 is where the concentration of that harm is assessed.
+H4 targets deference and anchoring rather than general usability — an interface can be
+highly usable and still manufacture agreement with the model.
 
 ### Imputable
 
@@ -125,10 +130,11 @@ that have actually held up in practice.
 
 ## Scoring it automatically
 
-Fill the `score` column of `templates/checklists/ethics_xray.csv` (copy it per system/version), then:
+Copy `templates/checklists/ethics_xray.csv` to `models/{{MODEL_ID}}/ethics_xray.csv`, fill
+its `score` column, and leave the template blank for the next model. Then:
 
 ```
-python scripts/run_ethics_xray.py --xray templates/checklists/ethics_xray.csv
+python scripts/run_ethics_xray.py --xray models/MDL-0001/ethics_xray.csv
 ```
 
 This writes `reports/ethics_xray_summary.json` and `reports/ethics_xray.md` with the ATS,
@@ -137,7 +143,7 @@ PTS, per-pillar breakdown, IGB band, and recommended action.
 To gate a release the way the performance and fairness checks do, use the three-part gate:
 
 ```
-python scripts/run_ethics_xray.py --xray models/MDL-0001/ethics_xray.csv   --min-pts 65 --min-pillar-pts 50 --require-nonzero T7,I1,I5,C1,S1,S2,H2,H5
+python scripts/run_ethics_xray.py --xray models/MDL-0001/ethics_xray.csv --min-pts 65 --min-pillar-pts 50 --require-nonzero T7,I1,I5,C1,S1,S2,H2,H5
 ```
 
 - `--min-pts` — overall band floor

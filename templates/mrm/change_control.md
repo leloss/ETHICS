@@ -20,7 +20,7 @@ material.
 - Changes the training population, label definition, or exclusion logic
 - Changes the model class, architecture, or hyperparameters beyond retuning
 - Extends use to a new population, jurisdiction, product, or workflow step
-- Changes the reliance level (advisory → decision support → automated)
+- Changes the reliance level (Advisory → Decision support → Automated with review → Automated)
 - Changes prompts, prompt templates, retrieval corpus, retrieval parameters, tools, or
   decoding settings in a generative system
 - Changes the base model version, including a provider-initiated update

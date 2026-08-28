@@ -58,6 +58,15 @@ An override rate falling toward zero is not agreement between human and model. I
 signal that review has become nominal, and it is investigated on the same footing as a
 performance breach.
 
+Segment these by team, shift, and reviewer experience level, and track them alongside model
+performance rather than separately. An aggregate that looks healthy can hide a night shift
+under throughput pressure, or new reviewers deferring where experienced ones challenge.
+
+Overrides are an input to governance, not an embarrassment metric. Recurring override
+reasons, user objections, and repeated operational defects feed the findings log and change
+control (H6); where they do not, human review generates no institutional learning.
+Route and cadence: {{...}}
+
 ## 4. Generative components (if applicable)
 
 | Signal | Threshold | Frequency | Owner |

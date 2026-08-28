@@ -6,12 +6,12 @@ blank in [`../templates/`](../templates/) so they can be copied cleanly for the 
 ```
 models/
 ├─ README.md
-├─ MDL-0001/
-│  ├─ mrm_lite.md              # Lite path: often the only file needed
+├─ MDL-0001/                   # Tier 4: Lite alone
+│  ├─ mrm_lite.md
 │  └─ ethics_xray.csv          # scored
-└─ MDL-0002/                   # full path, Tier 1-2
-   ├─ tiering.md
-   ├─ development_document.md
+└─ MDL-0002/                   # Tier 1-2: full set
+   ├─ model_risk_tiering.md
+   ├─ model_development_document.md
    ├─ model_card.md
    ├─ data_card.md
    ├─ genai_system_card.md
@@ -19,12 +19,17 @@ models/
    ├─ rai_checklist.md
    ├─ validation_plan.md
    ├─ validation_report.md
-   ├─ approval_record.md
-   ├─ monitoring_plan.md
+   ├─ model_approval_record.md
+   ├─ ongoing_monitoring_plan.md
+   ├─ model_incident_management.md
    └─ changes/
       ├─ CHG-0001.md
       └─ INC-0001.md
 ```
+
+Keep the template's filename when you copy it, so a reader can tell at a glance which
+template an instance came from. A Tier 3 model sits between the two: `mrm_lite.md` plus the
+Tier 3 additions.
 
 Registers are institution-wide rather than per-model, so they live at this level once you
 have more than one model:

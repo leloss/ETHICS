@@ -16,7 +16,8 @@ Two layers, used together:
 
 | You are | Start with |
 |---|---|
-| A small team, a startup, or governing a Tier 3–4 model | [`mrm/mrm_lite.md`](mrm/mrm_lite.md) — one page, one afternoon |
+| A small team or startup, or governing a Tier 4 model | [`mrm/mrm_lite.md`](mrm/mrm_lite.md) — one page, one afternoon, the complete record |
+| Governing a Tier 3 model | [`mrm/mrm_lite.md`](mrm/mrm_lite.md) as the core record, plus the [Tier 3 additions](mrm/model_risk_tiering.md#tier-3-additions-to-lite) |
 | A regulated institution, or governing a Tier 1–2 model | [`mrm/README.md`](mrm/README.md) — the full methodology |
 | Assessing a system that already exists | [`checklists/ethics_xray.md`](checklists/ethics_xray.md) — score it, then act on the band |
 
@@ -55,11 +56,13 @@ Filled artifacts live in `models/{{MODEL_ID}}/`, not in `templates/`. See
 | LLM, RAG, or agentic system | GenAI system card |
 | Decisions affecting people's access to credit, services, or care | Adverse action card, and the model card's Impact on Affected People section |
 | Vendor or embedded third-party model | Third-party due diligence |
-| Tier 1 or 2 | Development document, validation plan, validation report, findings log |
-| Tier 3 or 4 | Development document (short form), targeted or peer review |
+| Tier 1 or 2 | Development document, validation plan, validation report, findings log, approval record, incident plan |
+| Tier 3 | MRM Lite as the core record, plus targeted validation, second-line challenge, standard development document, model and data cards, approval record, incident plan |
+| Tier 4 | MRM Lite alone, plus peer review |
 
-Depth by tier is set in [`mrm/model_risk_tiering.md`](mrm/model_risk_tiering.md). A Tier 4
-model does not need the full set; requiring it everywhere is how frameworks stop being used.
+Depth by tier is set in [`mrm/model_risk_tiering.md`](mrm/model_risk_tiering.md), which is
+the authority where any document appears to disagree. A Tier 4 model does not need the full
+set; requiring it everywhere is how frameworks stop being used.
 
 ## How the pieces connect
 

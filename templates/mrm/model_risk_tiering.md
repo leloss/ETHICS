@@ -43,12 +43,12 @@ lowered only with documented rationale and committee approval. Record either her
 
 | Control | Tier 1 | Tier 2 | Tier 3 | Tier 4 |
 |---|---|---|---|---|
-| Governance artifact set | Full | Full | [Lite](mrm_lite.md) acceptable | [Lite](mrm_lite.md) |
-| Development document | Full | Full | Standard | Short form |
-| Model card | Required | Required | Required | Required |
-| Data card | Required | Required | Required | Simplified |
+| Governance artifact set | Full | Full | [Lite](mrm_lite.md) + Tier 3 additions below | [Lite](mrm_lite.md) alone |
+| Development document | Full | Full | Standard | Covered by Lite §4 |
+| Model card | Required | Required | Required | Covered by Lite §4 |
+| Data card | Required | Required | Required | Covered by Lite §4 |
 | GenAI system card (if applicable) | Required | Required | Required | Required |
-| ETHICS System X-Ray | Full 42, joint review | Full 42, joint review | Full 42, owner + 1 | Owner self-score |
+| ETHICS System X-Ray | Full 42, joint review | Full 42, joint review | Full 42, owner + 1 | Full 42, owner self-score |
 | X-Ray gate to deploy | See below | See below | See below | See below |
 | Independent validation | Full, pre-deployment | Full, pre-deployment | Targeted review | Peer review |
 | Effective challenge by 2LOD | Required | Required | Required | Not required |
@@ -56,13 +56,37 @@ lowered only with documented rationale and committee approval. Record either her
 | Ongoing monitoring frequency | Monthly | Monthly | Quarterly | Annually |
 | Recertification | Annual | Annual | Every 2 years | Every 3 years |
 | Change control | Full re-validation on material change | Full on material change | Assessment on material change | Notification |
-| Adverse action / appeal artifact | Required if decisions affect people | Required if applicable | Required if applicable | If applicable |
-| Approval record | Required | Required | Required | Lite sign-off |
-| Incident plan | Required | Required | Required | Named suspender + rollback |
+| Adverse action / appeal artifact | Required if decisions affect people | Required if applicable | Required if applicable | Required if applicable |
+| Approval record | Required | Required | Required | Covered by Lite §11 |
+| Incident plan | Required | Required | Required | Covered by Lite §10 |
 | Aggregate risk reporting | Every cycle | Every cycle | Exceptions only | Exceptions only |
 
-Tiers 1 and 2 may not deploy with open High or Critical validation findings. Tier 3 may
-deploy with open Medium findings under a dated remediation plan.
+### Tier 3 additions to Lite
+
+A Tier 3 model may use [Lite](mrm_lite.md) as its core record, and adds five things Lite
+does not carry. Tier 4 uses Lite alone.
+
+1. **Targeted independent validation** of the areas the tier flags as material — not peer
+   review, which is the Tier 4 standard.
+2. **Effective challenge by the second line**, or the compensating arrangement recorded
+   under [governance_and_raci.md](governance_and_raci.md) where no second line exists.
+3. **A standard development document** — [model_development_document.md](model_development_document.md),
+   since Lite §4 records what was tested but not why the design was chosen.
+4. **A model card and data card**, because a Tier 3 model is read by people who did not
+   build it.
+5. **Recertification every two years** under [change_control.md](change_control.md) Part B.
+
+### Open findings at deployment
+
+| Open finding severity | Tier 1 | Tier 2 | Tier 3 | Tier 4 |
+|---|---|---|---|---|
+| Critical | Blocked | Blocked | Blocked | Blocked |
+| High | Blocked | Blocked | Restricted use only, dated plan | Restricted use only, dated plan |
+| Medium | Deploy with dated plan | Deploy with dated plan | Deploy with dated plan | Deploy with dated plan |
+| Low / Observation | No effect | No effect | No effect | No effect |
+
+This table is the single source for the interaction of severity and tier; the severity
+definitions themselves are in [validation_plan.md](validation_plan.md).
 
 ## The X-Ray gate
 
@@ -105,7 +129,7 @@ zero here cannot be compensated by strength elsewhere.
 Enforce the full gate with:
 
 ```
-python scripts/run_ethics_xray.py --xray models/MDL-0001/ethics_xray.csv   --min-pts 65 --min-pillar-pts 50 --require-nonzero T7,I1,I5,C1,S1,S2,H2,H5
+python scripts/run_ethics_xray.py --xray models/MDL-0001/ethics_xray.csv --min-pts 65 --min-pillar-pts 50 --require-nonzero T7,I1,I5,C1,S1,S2,H2,H5
 ```
 
 Where a deployment date cannot move and the gate is not met, the route is a time-bound

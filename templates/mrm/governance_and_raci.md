@@ -42,8 +42,10 @@ R = responsible · A = accountable · C = consulted · I = informed
 | Development | A | R | I | I | C | C | C | — |
 | X-Ray self-assessment | A | R | I | C | C | C | C | — |
 | Validation | C | C | R | A | I | C | C | I |
-| Approval (Tier 1) | C | I | C | C | I | I | C | A/R |
-| Approval (Tier 2–4) | C | I | C | A/R | I | I | C | I |
+| Approval (Tier 1) — committee | C | I | C | C | I | I | C | A/R |
+| Approval (Tier 2) — committee delegate | C | I | C | R | I | I | C | A |
+| Approval (Tier 3) — 2LOD head | C | I | C | A/R | I | I | C | I |
+| Approval (Tier 4) — business owner + 1 | A/R | I | C | I | I | I | C | I |
 | Deployment | A | C | I | I | R | C | I | I |
 | Monitoring | A/R | C | C | C | C | I | I | I |
 | Change assessment | A/R | C | C | C | C | C | C | I |

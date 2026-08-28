@@ -8,7 +8,7 @@
 ## Data  
 - Sources/timeframe: {{SOURCES}}, {{DATES}}  
 - Consent/legal basis: {{CONSENT_BASIS}}  
-- Not used/prohibited: {protected attributes, proxies}: {{PROHIBITED}}  
+- Not used/prohibited (protected attributes, proxies): {{PROHIBITED}}  
 - Representativeness/coverage: {{REPRESENTATIVENESS_SUMMARY}}  
   
 ## Features  
@@ -28,7 +28,7 @@
 - What is suppressed or never surfaced to a human: {{...}}  
 - Steps that remain genuinely discretionary vs. effectively mandatory under time/volume  
   pressure: {{...}}  
-- Reliance expectation: {{assistive only / decision support / automated with review / automated}}  
+- Reliance expectation: {{Advisory / Decision support / Automated with review / Automated}}  
   
 ## Performance (primary)  
 - Metrics: ROC-AUC={{...}}, PR-AUC={{...}}, F1={{...}}, Expected loss={{...}}  
@@ -50,7 +50,8 @@
 - Data drift: tests={{PSI/KL}}, triggers={{...}}  
 - Performance/cali drift: {{...}}  
 - Fairness drift cadence: {{...}}  
-- Incident playbooks and rollback: {{LINKS}}  
+- Incident playbooks and rollback: {{LINKS}} — see [incident management](mrm/model_incident_management.md)  
+- Full monitoring design: [ongoing monitoring plan](mrm/ongoing_monitoring_plan.md)  
   
 ## Explainability and Adverse Action  
 - Method(s): {{SHAP/monotone/ablation}}; faithfulness tests={{...}}  
@@ -77,14 +78,24 @@ whether it lets them act.
 - Is that consequence borne evenly across groups? {{...}} — note that selection-rate parity  
   (SPD, TPR/FPR gaps) measures who is selected, not who absorbs the harm.  
 - Appeal / correction route: {{what it is, who runs it, target turnaround}}  
+- Can the affected person challenge the underlying record, not only the final label, and does  
+  that challenge reach someone able to reopen the factual basis? {{...}}  
+- Points of choice before the decision lands: human review on request, opt-out of an  
+  AI-driven channel, declining data use beyond what the service requires: {{...}}  
 - Is the affected person told an AI system was involved? {{Yes/No, how}}  
-- Social impact assessment: {{link, date, author}}  
+- Deskilling and silent-deference risk for the staff operating it: {{...}}  
+- Behaviour near or outside the validated envelope, and the safety consequence for affected  
+  people and staff: {{...}}  
+- Social and safety impact assessment: {{link, date, author}}  
   
 ## Limitations and Risks  
 - Known failure modes: {{...}}  
 - Domain guardrails and approved uses: {{...}}  
   
 ## Approvals  
-- Model owner sign-off: {{NAME/DATE}}  
-- Independent validation: {{NAME/DATE}}  
-- Business/Compliance: {{NAME/DATE}}  
+- Model owner sign-off (card is complete and accurate): {{NAME/DATE}}  
+- Independent validation: [validation report](validation_report.md), {{NAME/DATE}}  
+- Deployment approval: [approval record](mrm/model_approval_record.md), {{NAME/DATE}}  
+  
+Signing this card attests that the record is accurate. It is not the approval to deploy —
+that decision, its conditions, and its scope live in the approval record.  

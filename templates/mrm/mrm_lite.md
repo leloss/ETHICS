@@ -1,9 +1,14 @@
 # MRM Lite — One-Page Model Governance
 
 For small teams, startups, and low-tier models. One file, filled in an afternoon, that
-covers the governance that actually prevents harm. It replaces the full artifact set for
-Tier 3 and Tier 4 models, and for any organisation not yet carrying a second line of
-defence.
+covers the governance that actually prevents harm.
+
+- **Tier 4:** this file is the complete record.
+- **Tier 3:** this file is the core record, plus the five
+  [Tier 3 additions](model_risk_tiering.md#tier-3-additions-to-lite) — targeted independent
+  validation, second-line challenge, a development document, model and data cards, and
+  two-yearly recertification.
+- **Tier 1–2:** not sufficient. Use the [full set](README.md).
 
 This is the same methodology at a proportionate depth, not a different standard. The
 questions below are the ones the full templates ask; they are asked once, briefly, in the
@@ -69,10 +74,12 @@ The question that stops teams from shipping models that only look useful.
 - Threshold and how it was chosen: {{...}}
 - Someone other than the builder reviewed this: {{NAME/DATE}}
 
-> Peer review is the Lite substitute for independent validation. It is weaker, and it is
+> Peer review is the Tier 4 substitute for independent validation. It is weaker, and it is
 > real: a second person with the standing to say no, who did not build the model. Where no
 > such person exists internally, name the external reviewer or record that this control is
-> absent.
+> absent. **At Tier 3 this is not enough** — add targeted independent validation and
+> second-line challenge per
+> [Tier 3 additions](model_risk_tiering.md#tier-3-additions-to-lite).
 
 ## 5. Explaining it
 
@@ -86,8 +93,11 @@ The question that stops teams from shipping models that only look useful.
 
 - Who reviews the output, and can they realistically disagree? {{...}}
 - How much time do they have per case: {{...}}
-- What happens when they override: {{...}}
-- How does an affected person challenge the outcome: {{...}}
+- What happens when they override, and where does the disagreement go? {{...}}
+- **When the model is wrong, can the reviewer reasonably catch it?** {{...}} — if no, the
+  review step is shifting liability rather than controlling risk
+- How does an affected person challenge the outcome, including the record behind it: {{...}}
+- Can they reach a human before the decision is final: {{...}}
 
 ## 7. Security and data
 
@@ -165,9 +175,9 @@ Named so the gap is a decision rather than an oversight:
 
 | Not covered here | Full-set artifact | Why it can wait at low tier |
 |---|---|---|
-| Independent validation and effective challenge | [validation_plan.md](validation_plan.md), [validation report](../validation_report.md) | Peer review substitutes at Tier 3–4; nothing substitutes at Tier 1–2 |
+| Independent validation and effective challenge | [validation_plan.md](validation_plan.md), [validation report](../validation_report.md) | Peer review substitutes at Tier 4 only; Tier 3 adds targeted validation; nothing substitutes at Tier 1–2 |
 | Portfolio inventory and aggregate risk view | [model_inventory.csv](model_inventory.csv) | One or two models fit in one file; five do not |
 | Formal risk appetite and committee | [governance_and_raci.md](governance_and_raci.md) | Needs an organisation large enough to have a second line |
-| Structured change control and recertification | [change_control.md](change_control.md) | Section 9 plus a review date carries this until change becomes frequent |
-| Full 42-checkpoint ETHICS System X-Ray | [ethics_xray.md](../checklists/ethics_xray.md) | Worth doing anyway — it is a checklist, not a project |
+| Structured change control and recertification | [change_control.md](change_control.md) | Section 9 plus a review date carries Tier 4; Tier 3 recertifies two-yearly |
+| Nothing — the full 42-checkpoint X-Ray applies at every tier | [ethics_xray.md](../checklists/ethics_xray.md) | It is a checklist, not a project; only the review depth and the gate thresholds scale by tier |
 | Third-party due diligence depth | [third_party_model_due_diligence.md](third_party_model_due_diligence.md) | Section 7 covers the essentials for a single vendor |

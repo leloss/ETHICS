@@ -59,8 +59,8 @@ monitoring, and escalation. Covered by
 
 ## Lifecycle
 
-Each stage names the artifact that must exist before the stage can close. Stage 8 is
-event-driven; the rest run in order.
+Each stage names the artifact that must exist before the stage can close. Stages 1–6 run
+in order; stages 7, 8, and 10 are event-driven; stage 9 is periodic.
 
 | Stage | Gate question | Artifact | Owner |
 |---|---|---|---|
@@ -82,9 +82,12 @@ stages 2–4, since the institution cannot delegate its own accountability to a 
 ## Proportionality
 
 Controls scale with tier. A Tier 1 model carries full independent validation, annual
-recertification, and committee approval; a Tier 3 model carries developer testing, review
-by a second person, and periodic attestation. [`model_risk_tiering.md`](model_risk_tiering.md)
-defines the tier assignment and the control set each tier triggers. Proportionality is what
+recertification, and model risk committee approval. A Tier 3 model carries targeted
+validation, second-line challenge, approval by the second-line head, and two-yearly
+recertification, and may use [`mrm_lite.md`](mrm_lite.md) as its core record. A Tier 4
+model carries peer review and Lite alone. [`model_risk_tiering.md`](model_risk_tiering.md)
+is the authority on tier assignment and on the control set each tier triggers; where any
+other document appears to disagree with it, that table wins. Proportionality is what
 keeps the methodology usable — a framework that demands Tier 1 rigour everywhere is
 abandoned everywhere.
 

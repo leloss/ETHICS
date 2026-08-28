@@ -45,11 +45,21 @@ jobs:
           python scripts/run_accuracy_metrics.py --config config/accuracy_metrics.yaml  
         continue-on-error: false  
   
-      # The X-Ray gates on governance evidence, not model output. It fails the build when  
-      # the sheet is unscored, so an unfilled assessment cannot pass as a zero-risk one.  
+      # The X-Ray gates on governance evidence, not model output. Scored sheets live in  
+      # models/<MODEL_ID>/ethics_xray.csv; the template stays blank. A partially scored  
+      # sheet fails, so an unfilled assessment cannot pass as a zero-risk one.  
       - name: Score ETHICS System X-Ray  
         run: |  
-          python scripts/run_ethics_xray.py --xray templates/checklists/ethics_xray.csv  
+          shopt -s nullglob  
+          sheets=(models/*/ethics_xray.csv)  
+          if [ ${#sheets[@]} -eq 0 ]; then  
+            echo "No scored X-Ray sheets under models/*/ethics_xray.csv - skipping."  
+            exit 0  
+          fi  
+          for sheet in "${sheets[@]}"; do  
+            echo "== $sheet"  
+            python scripts/run_ethics_xray.py --xray "$sheet" --out-dir "reports/$(basename $(dirname $sheet))"  
+          done  
         continue-on-error: false  
   
       - name: Upload reports  

@@ -28,6 +28,12 @@ Decision: {{Approve / Approve with conditions / Approve for restricted use / Rej
 - Sunset/rollback criteria: {{what triggers rollback, who approves}}  
   
 ## Final Determination  
-- Decision: {{Approve/Approve with conditions/Reject}}  
+- Decision: {{Approve / Approve with conditions / Approve for restricted use / Reject / Defer}}  
+- Where restricted: the populations, workflow steps, or reliance levels permitted: {{...}}  
 - Validator signature: {{NAME/DATE}}  
-- Business/Compliance sign-off: {{NAMES/DATES}}  
+- Reviewed by 2LOD: {{NAME/DATE}}  
+  
+This report is the validation opinion, not the approval. The decision to accept the
+residual risk and deploy is recorded separately in
+[model_approval_record.md](mrm/model_approval_record.md), signed by the approval authority
+for the tier. A validator who also approves is not independent.  

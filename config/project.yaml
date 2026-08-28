@@ -87,6 +87,17 @@ monitoring:
     appeals_volume: {cadence_days: 90}  
     appeals_upheld_rate: {cadence_days: 90, alert_above: null}     # high = systematic error  
     review_qa_sample_rate: 0.05  
+    # Segment the above; an aggregate hides a night shift under throughput pressure and new  
+    # reviewers deferring where experienced ones challenge.  
+    segment_by: ["team", "shift", "reviewer_experience_level"]  
+    # H6: overrides are an input to governance, not an embarrassment metric.  
+    override_reasons_reviewed_cadence_days: 90  
+    # H4: an interface can be highly usable and still manufacture agreement.  
+    deference_indicators:  
+      accept_vs_reject_effort_symmetry: "{{reviewed / not reviewed}}"  
+      evidence_shown_before_recommendation: "{{Y/N}}"  
+    # H7  
+    deskilling_review_cadence_days: 180  
   
   # Human-Centered / Credible: parity is not error-cost distribution. SPD and TPR/FPR gaps
   # say who is selected; they do not say who absorbs the harm when the system is wrong.

@@ -35,7 +35,7 @@ Quick start:
    - python scripts/run_accuracy_metrics.py --config config/accuracy_metrics.yaml
    - python scripts/run_ethics_xray.py --xray templates/checklists/ethics_xray.csv
 7) Push to GitHub; CI will publish reports to the Actions artifacts.  
-   - CI is red until you supply data/processed/eval.csv and a scored X-Ray. That is intentional: an unfilled assessment must not pass as a zero-risk one.  
+   - CI is red until you supply data/processed/eval.csv. That is intentional. The X-Ray step scores every models/<MODEL_ID>/ethics_xray.csv it finds and skips when there are none, so a partially scored sheet fails rather than passing as zero-risk.  
 8) Link artifacts in PRs to support reviews and audits.  
   
 Open-source tools:  

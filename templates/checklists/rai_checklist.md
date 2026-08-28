@@ -34,8 +34,17 @@ so that self-assessment and validation feed one remediation queue rather than tw
   - [ ] Time: workload allows the review to actually happen (cases/shift vs. review time)  
   - [ ] Evidence: reviewers get what they need to disagree, in their own domain terms  
   - [ ] Clarity: reviewers know what the system is for, and what it is not for  
+  - [ ] Accepting the model output requires as much thought as rejecting it, where stakes justify it  
+  - [ ] Interface sequences evidence before recommendation (H4: reduce anchoring and deference)  
+  - [ ] Confidence values and generated rationale signal uncertainty honestly, not false authority  
   - [ ] Override rate, override-upheld rate, and review time monitored post-deployment  
+  - [ ] Override patterns segmented by team, shift, and experience level, and connected to change control  
   - [ ] Appeal route exists for affected people; volume and upheld rate monitored  
+  - [ ] Affected people can challenge the underlying record, not only the final label  
+  - [ ] Points of choice before the decision lands (human review on request, opt-out of an AI channel, decline non-essential data use)  
+  - [ ] Frontline staff can raise concerns safely and reach governance without routing through the model owner  
+  - [ ] Deskilling and silent-deference risk assessed (H7)  
+  - [ ] **When the system is wrong, can the reviewer reasonably catch it?** If no, the review step shifts liability rather than controlling risk  
   - [ ] Adverse action reason card completed; compliance reviewed  
   
 - Imputable (Accountability/Auditability)  
@@ -57,4 +66,5 @@ so that self-assessment and validation feed one remediation queue rather than tw
   - [ ] SBOM generated; vulnerability scans clean or accepted  
   - [ ] GenAI guardrails (if applicable) tested (prompt injection, leakage)  
   
-Approvals: Owner {{...}} | IVU {{...}} | Compliance {{...}} | Security {{...}} | Date {{...}}  
+Approvals: Model owner {{...}} | Validator {{...}} | Compliance {{...}} | Security {{...}} | Date {{...}}  
+Deployment approval is recorded separately in [model_approval_record.md](../mrm/model_approval_record.md).  
