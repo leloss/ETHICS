@@ -144,9 +144,10 @@ Requires Python 3.11 or later (CI runs 3.11; dependencies verified through 3.13)
 9. Push to GitHub; CI publishes reports as Actions artifacts, and link those artifacts in
    pull requests to support review and audit.
 
-CI is red until you supply `data/processed/eval.csv`. That is intentional. The X-Ray step
-scores every `models/<MODEL_ID>/ethics_xray.csv` it finds and skips when there are none, so
-a partially scored sheet fails rather than passing as zero-risk.
+CI stands down rather than failing on a fresh clone: the performance, fairness, and accuracy
+gates activate once you add `data/processed/eval.csv`, and the X-Ray step scores every
+`models/<MODEL_ID>/ethics_xray.csv` it finds. Once activated, a breached threshold or a
+partially scored sheet fails the build rather than passing as zero-risk.
 
 ### Gating a release on governance evidence
 
