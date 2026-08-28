@@ -54,7 +54,7 @@ the institution's. Reliance rests on testing against the institution's own data.
   Automated with review | Automated}}
 
 ## Data and security
-- Data sent to the vendor: {{fields, and whether minimised or hashed}}
+- Data sent to the vendor: {{fields, and whether minimized or hashed}}
 - Legal basis for the transfer: {{...}}
 - Processing and storage locations: {{...}}
 - Retention at the vendor and deletion rights: {{...}}
