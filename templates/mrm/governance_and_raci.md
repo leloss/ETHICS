@@ -2,7 +2,7 @@
 - Institution / business unit: {{...}} | Policy owner: {{NAME}} | Version: {{...}} | Date: {{DATE}}
 - Related: [MRM methodology](README.md) · [tiering](model_risk_tiering.md) · [change control](change_control.md)
 
-## Three lines of defence
+## Three lines of defense
 
 | Line | Who | Owns | Does not |
 |---|---|---|---|

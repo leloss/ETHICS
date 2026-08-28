@@ -33,7 +33,7 @@ material.
 |---|---|---|---|
 | **Major** | New model class, new population, reliance level increase, threshold change on Tier 1–2 | Full re-validation, re-tiering, X-Ray re-score | Committee |
 | **Minor material** | Feature change, retraining on new data, prompt or retrieval change, provider version update | Targeted validation of affected areas, X-Ray re-score of affected pillars | 2LOD |
-| **Non-material** | Infrastructure move, latency optimisation, logging addition, cosmetic UI change | Regression test, parity evidence, record only | Model owner |
+| **Non-material** | Infrastructure move, latency optimization, logging addition, cosmetic UI change | Regression test, parity evidence, record only | Model owner |
 | **Emergency** | Fix for live harm or breach | Deploy first, full assessment within {{N}} business days | Model owner, notify 2LOD immediately |
 
 Emergency changes are the route most often abused. Each one is reported to the committee at

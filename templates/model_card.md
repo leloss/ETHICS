@@ -84,7 +84,7 @@ whether it lets them act.
   AI-driven channel, declining data use beyond what the service requires: {{...}}  
 - Is the affected person told an AI system was involved? {{Yes/No, how}}  
 - Deskilling and silent-deference risk for the staff operating it: {{...}}  
-- Behaviour near or outside the validated envelope, and the safety consequence for affected  
+- Behavior near or outside the validated envelope, and the safety consequence for affected  
   people and staff: {{...}}  
 - Social and safety impact assessment: {{link, date, author}}  
   

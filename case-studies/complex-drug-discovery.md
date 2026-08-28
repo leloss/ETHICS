@@ -67,7 +67,7 @@ The program combined technical innovation, process redesign, and governance refo
 - **Explainability**: SHAP/LIME and rule-based trace outputs used for each compound to show which features (metabolism liability, reactive metabolite score, off-target binding) drove a toxicity prediction.
 
 ### Human-centered — researcher and animal welfare staff engagement
-- **Cross-functional panels** (chemistry, DMPK, toxicology, ethics, animal welfare) for each candidate decision to ensure human judgement complements model signals.
+- **Cross-functional panels** (chemistry, DMPK, toxicology, ethics, animal welfare) for each candidate decision to ensure human judgment complements model signals.
 - **Welfare-centric lab changes**: refined anesthesia and analgesia protocols, environmental enrichment; severity scoring recalibrated; mandatory welfare training for technicians.
 - **Stakeholder engagement**: patient advocacy groups and ethics advisors included in quarterly public reports to improve transparency.
 

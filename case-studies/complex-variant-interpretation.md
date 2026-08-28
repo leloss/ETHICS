@@ -12,7 +12,7 @@ The solution was intended to shorten turnaround time, increase throughput, and s
 
 ### Diagnostic performance & clinical safety
 - Vendor/academic model claimed **sensitivity = 0.92**, **specificity = 0.87** for detecting pathogenic variants from panel data.  
-- Local validation revealed **PPV (positive predictive value) for ‘pathogenic’ calls = 0.55**, meaning **45% of variants labelled “pathogenic” were later downgraded** by molecular pathologists after manual review.  
+- Local validation revealed **PPV (positive predictive value) for ‘pathogenic’ calls = 0.55**, meaning **45% of variants labeled “pathogenic” were later downgraded** by molecular pathologists after manual review.  
 - Turnaround time (sample to report): **14 calendar days** median, causing delays in treatment planning.  
 - There were **7 near-misses** within a year where automated classification suggested a targeted therapy later judged inappropriate after tumor board review.
 

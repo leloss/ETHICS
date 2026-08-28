@@ -5,7 +5,7 @@
 - Decision criticality/risk tier: {{TIER}} | Regulatory scope: {{REGULATIONS}}
 
 Companion to `model_card.md` for systems built on LLMs, RAG, or agentic pipelines.
-The model card assumes features, a threshold, and a score. A generative system's behaviour
+The model card assumes features, a threshold, and a score. A generative system's behavior
 is instead governed by prompts, retrieval sources, templates, and control settings — so
 those are the governed components, and T7 is not satisfied until they can be reconstructed
 for any past output.
@@ -32,7 +32,7 @@ for any past output.
 - Chunking/embedding: model={{...}}, chunk size={{...}}, overlap={{...}}
 - Retrieval params: k={{...}}, filters={{...}}, reranker={{...}}
 - Access scoping: does retrieval respect the requesting user's entitlements? {{Yes/No, how}}
-- Citation policy: every claim cited={{Yes/No}}, unsupported-claim behaviour={{refuse/hedge/answer}}
+- Citation policy: every claim cited={{Yes/No}}, unsupported-claim behavior={{refuse/hedge/answer}}
 - Coverage gaps: what the corpus does NOT contain that users may assume it does={{...}}
 
 ## Decision Pathway Reconstruction (T7)
@@ -76,7 +76,7 @@ Applies when the system explains its own output, or explains another model's dec
 - Known failure modes: {{...}}
 - Approved uses / prohibited uses: {{...}}
 - Where output must not be relied on without independent verification: {{...}}
-- Refusal and escalation behaviour: {{...}}
+- Refusal and escalation behavior: {{...}}
 
 ## Approvals
 - System owner sign-off: {{NAME/DATE}}

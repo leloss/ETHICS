@@ -154,7 +154,7 @@ Growth, not calendar time, is what should move a team off Lite. Check at each re
 - [ ] Decisions become automated, or human review becomes nominal in practice
 - [ ] Use extends to a new population, jurisdiction, product, or workflow step
 - [ ] A regulator, auditor, enterprise customer, or investor asks how the model is governed
-- [ ] The organisation acquires a second line of defence, or is required to have one
+- [ ] The organization acquires a second line of defense, or is required to have one
 - [ ] More than {{5}} models are in production, or more than one team is building them
 - [ ] A SEV1 or SEV2 incident occurs, or the same problem recurs
 - [ ] The model feeds another model, or its output is reused downstream
@@ -177,7 +177,7 @@ Named so the gap is a decision rather than an oversight:
 |---|---|---|
 | Independent validation and effective challenge | [validation_plan.md](validation_plan.md), [validation report](../validation_report.md) | Peer review substitutes at Tier 4 only; Tier 3 adds targeted validation; nothing substitutes at Tier 1–2 |
 | Portfolio inventory and aggregate risk view | [model_inventory.csv](model_inventory.csv) | One or two models fit in one file; five do not |
-| Formal risk appetite and committee | [governance_and_raci.md](governance_and_raci.md) | Needs an organisation large enough to have a second line |
+| Formal risk appetite and committee | [governance_and_raci.md](governance_and_raci.md) | Needs an organization large enough to have a second line |
 | Structured change control and recertification | [change_control.md](change_control.md) | Section 9 plus a review date carries Tier 4; Tier 3 recertifies two-yearly |
 | Nothing — the full 42-checkpoint X-Ray applies at every tier | [ethics_xray.md](../checklists/ethics_xray.md) | It is a checklist, not a project; only the review depth and the gate thresholds scale by tier |
 | Third-party due diligence depth | [third_party_model_due_diligence.md](third_party_model_due_diligence.md) | Section 7 covers the essentials for a single vendor |

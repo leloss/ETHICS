@@ -5,7 +5,7 @@
 The development record supporting conceptual soundness under SR 11-7. The standard it must
 meet: a competent third party who did not build the model can read this document and
 reconstruct what was built, why those choices were made, what was rejected, and what the
-model should not be used for. The model card summarises the result; this document carries
+model should not be used for. The model card summarizes the result; this document carries
 the reasoning.
 
 ## 1. Business problem and intended use
@@ -74,7 +74,7 @@ Testing is the developer's own challenge to the model, not a demonstration that 
 - Sensitivity to input perturbation: {{...}}
 - Stress and edge-case testing: {{scenarios and results}}
 - Benchmark against the alternatives in section 2, including the human baseline: {{...}}
-- Failure analysis: where does it break, and what characterises the cases it gets wrong? {{...}}
+- Failure analysis: where does it break, and what characterizes the cases it gets wrong? {{...}}
 - Tests that were run and did **not** support the model: {{...}}
 
 ## 8. Threshold and decision rule
@@ -88,7 +88,7 @@ Testing is the developer's own challenge to the model, not a demonstration that 
 - Production architecture and where the model executes: {{...}}
 - Training / serving consistency: how verified? {{...}}
 - Pre-production parity test results: {{...}}
-- Fallback behaviour if the model is unavailable or returns an invalid output: {{...}}
+- Fallback behavior if the model is unavailable or returns an invalid output: {{...}}
 - Versioning: code commit={{...}}, data hash={{...}}, environment={{...}}, artifact registry={{...}}
 
 ## 10. Limitations

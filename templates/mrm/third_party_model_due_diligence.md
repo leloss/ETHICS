@@ -35,7 +35,7 @@ the institution generates its own or accepts a documented limitation on reliance
 Vendor-reported performance is a claim about the vendor's population, not evidence about
 the institution's. Reliance rests on testing against the institution's own data.
 
-- Institution's benchmark set: size={{...}}, construction={{...}}, labelling method={{...}}
+- Institution's benchmark set: size={{...}}, construction={{...}}, labeling method={{...}}
 - Vendor-claimed performance: {{...}}
 - Measured performance on institution data: {{...}}
 - Gap between claimed and measured, and explanation: {{...}}

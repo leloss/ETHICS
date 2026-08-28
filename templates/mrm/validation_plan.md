@@ -51,7 +51,7 @@ test the model where the developer had least incentive to look.
 
 - **Independent test data**: source={{...}}, why it is genuinely independent={{...}}
 - **Independent benchmark**: challenger model or alternative approach={{...}}
-- **Use as practised**: how output is actually used in the workflow, versus how the
+- **Use as practiced**: how output is actually used in the workflow, versus how the
   development document says it is used. Method={{shadowing, case sampling, interviews}}
 - **Oversight reality**: override rate, review time per case, and whether reviewers can
   articulate grounds for disagreement. Method={{...}}

@@ -69,7 +69,7 @@ monitoring:
   
   # E2 (Enhancing): counter-metrics. Statistical complements (PR-AUC beside ROC-AUC,
   # Brier beside accuracy) do not detect burden shifting. These do. Track them or the
-  # institution measures only what is easy and locally favourable.
+  # institution measures only what is easy and locally favorable.
   counter_metrics:  
     rework_rate: {source: "{{system}}", cadence_days: 30, alert_above: null}  
     downstream_qa_burden: {source: "{{system}}", cadence_days: 30, alert_above: null}  
