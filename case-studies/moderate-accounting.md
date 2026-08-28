@@ -29,7 +29,7 @@ The initiative was intended to **improve efficiency and reduce compliance costs*
   - Duplicate invoices  
 - Stakeholders described the system as a “black hole,” where **false alarms buried real issues**.
 
-### **Human-centered**
+### **Human-Centered**
 - The system **generated robotic, jargon-heavy narratives** in reports.  
 - Example: *"Detected deviation in accrual-basis revenue adjustments at threshold 1.43 sigma."*  
 - End-users (finance teams, executives) found this **useless and alienating**, preferring manual summaries.  
@@ -44,7 +44,7 @@ The initiative was intended to **improve efficiency and reduce compliance costs*
 - Trust collapsed rapidly:
   - **Auditor override rate** was 55% in Q1 reporting.  
   - Finance teams reverted to **manual review of 78% of system output**, nullifying time savings.  
-- A PwC compliance review found that the **lack of auditability and false positives** meant the system could not be relied upon for **SOX reporting**.  
+- An external compliance review found that the **lack of auditability and false positives** meant the system could not be relied upon for **SOX reporting**.  
 
 ### **Secure**
 - Sensitive data, including **employee reimbursement receipts and vendor contracts**, was sent through third-party APIs for OCR and classification **without redaction**.  
@@ -66,7 +66,7 @@ The initiative was intended to **improve efficiency and reduce compliance costs*
   - Journal reclassification provides top 3 features and probabilities.  
 - Dashboards show **how performance varies by geography, account type, and quarter**, allowing stakeholders to challenge outputs.
 
-### **Human-centered**
+### **Human-Centered**
 - Narrative generation was redesigned using **finance-team co-creation workshops**.  
 - Reports now:  
   - Use **plain language** ("Revenue increased 12% YoY, but one-time costs caused lower margins")  
@@ -92,7 +92,7 @@ The initiative was intended to **improve efficiency and reduce compliance costs*
 - Replaced third-party OCR APIs with **on-prem secure document processing**.  
 - Applied **PII masking and contract redaction** before any model ingestion.  
 - Encryption (AES-256 at rest, TLS 1.3 in transit) was enforced across pipelines.  
-- Security audits showed **zero leakage vectors**, closing previous compliance gaps.  
+- The post-remediation security review identified **no remaining paths for contract or PII data to reach third parties**, closing the previously reported gaps.  
 
 ---
 
@@ -110,10 +110,19 @@ The initiative was intended to **improve efficiency and reduce compliance costs*
 
 ---
 
+## What the team continues to monitor
+
+- The 11% anomaly false-positive rate is planned into reviewer capacity and tracked for drift.
+- Misclassification is monitored by account type and geography so SOX reliance rests on knowing where errors cluster.
+- Seasonality-aware retraining is validated against historical Q4 patterns, with novel transaction types routed to manual review.
+- Bringing OCR on-prem moved maintenance and patching in-house, now covered by the platform team's standing runbook.
+
+---
+
 ## Lessons Learned
 - **Performance without context is misleading**: AI worked on benchmarks but collapsed under seasonality and distribution drift.  
 - **Black-box anomaly detection is useless to auditors**; transparent reason codes turned the tool into a credible partner.  
-- **Human-centered design is essential**: shifting from robotic, technical narratives to localized, empathetic reports drove adoption.  
+- **Human-Centered design is essential**: shifting from robotic, technical narratives to localized, empathetic reports drove adoption.  
 - **Traceability and imputability are non-negotiable** in regulated accounting environments.  
 - **Security lapses can negate all gains**: leaking PII and contracts exposed the company to existential risk.  
 - ETHICS transformed a **risky, distrusted system** into a **performant, auditable, human-friendly, and compliant solution**, enabling safe global deployment.  

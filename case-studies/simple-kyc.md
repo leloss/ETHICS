@@ -35,7 +35,7 @@ Management decided to adopt the **ETHICS Framework** to address these shortcomin
 - Analysts could now see which features contributed to risk scoring.  
 - Leadership received periodic model performance documentation.
 
-### **Human-centered**
+### **Human-Centered**
 - Implemented **analyst-in-the-loop (HITL)** review for borderline cases.  
 - Standardized explanations helped analysts understand and contest decisions.  
 - Analysts reported increased confidence in combining their expertise with the model’s output.
@@ -66,7 +66,16 @@ Management decided to adopt the **ETHICS Framework** to address these shortcomin
 
 ---
 
+## What the team continues to monitor
+
+- Suspicion labels come from prior analyst decisions, so the typology library is refreshed periodically to extend coverage beyond known patterns.
+- Detection is measured against known cases, with a periodic look-back on closed files to test for missed activity.
+- Subgroup fairness monitoring is in place, with nationality and residency proxies reviewed with legal before use.
+- Gains are measured at the current operating threshold; any change in risk appetite triggers revalidation.
+
+---
+
 ## Lessons Learned
 - Raw accuracy metrics can be **misleading** without calibration and transparency.  
-- Embedding **ETHICS principles** (Enhancing, Transparent, Human-centered, Imputable, Credible, Secure) provides a **structured pathway** to build Responsible AI in financial compliance.  
+- Embedding **ETHICS principles** (Enhancing, Transparent, Human-Centered, Imputable, Credible, Secure) provides a **structured pathway** to build Responsible AI in financial compliance.  
 - By aligning AI design with governance and human needs, organizations can turn black-box models into **trustworthy decision-support systems**.

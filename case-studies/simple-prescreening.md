@@ -12,7 +12,7 @@ A community bank wants to speed up small personal loan pre-screening to reduce c
 ## ETHICS (applied simply)
 - **Enhancing**: Replace single accuracy target with operational metrics — approval yield, false-decline rate, and average processing time. Set a conservative threshold to limit portfolio EL impact.
 - **Transparent**: Provide a one-line reason for each automated decision (top contributing features) and a short model card for officers.
-- **Human-centered**: Keep officers in control — automated fast-track only recommends, officer must confirm; capture officer rationale when overriding.
+- **Human-Centered**: Keep officers in control — automated fast-track only recommends, officer must confirm; capture officer rationale when overriding.
 - **Imputable**: Log inputs, model score, recommended action, officer decision, and timestamp for every case.
 - **Credible**: Monitor AUC and calibration monthly; run simple fairness checks (compare TPR across income quartiles).
 - **Secure**: Limit model access to authorized staff and avoid sending raw PII to external services.
@@ -21,6 +21,15 @@ A community bank wants to speed up small personal loan pre-screening to reduce c
 - Processing time for fast-tracked cases: **48 → 24 hours** (−50%).
 - False-decline rate (lower-income group): **+8 pp → +2 pp** after thresholding and small bias mitigation.
 - Officer override rate reduced from **27% → 12%** after adding short explanations.
+
+## What the team continues to monitor
+
+- The remaining +2pp false-decline gap for lower-income applicants carries a scheduled review date and quarterly fairness reporting.
+- Overrides are sampled for correctness, so the fall from 27% to 12% can be read as better recommendations rather than growing deference.
+- Fast-track covers recommended approvals; declines route to manual review, and extending the same fairness analysis to that path is the next step.
+- Reason codes depend on the model staying linear, which is a documented constraint on future model changes.
+
+---
 
 ## Next Steps
 - Publish the model card to internal policy owners.

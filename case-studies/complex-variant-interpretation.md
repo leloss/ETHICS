@@ -50,7 +50,7 @@ A comprehensive remediation program was established involving Laboratory Medicin
 - **Structured evidence bundles**: each variant report includes: snapshot of databases used (with accession and date), population frequency table, links to supporting literature (PMIDs), and a per-criterion breakdown of ACMG rules applied.  
 - **Explainable pathogenicity score**: output decomposed into components (population rarity, functional prediction aggregate, segregation evidence, prior clinical assertions) with weights and citation links.
 
-### Human-centered (MTB integration & clinician workflows)
+### Human-Centered (MTB integration & clinician workflows)
 - **Tiered reporting**: critical actionable variants surfaced in an executive summary for oncologists; full evidence bundle available for molecular pathologists.  
 - **HITL for uncertain/high-impact variants**: variants with intermediate confidence or those triggering treatment recommendations were routed to a rapid molecular review panel (median review time goal 48 hours).  
 - **Patient-facing language**: developed lay summaries for germline incidental findings to support genetic counseling.
@@ -76,13 +76,13 @@ A comprehensive remediation program was established involving Laboratory Medicin
 
 ### Diagnostic performance & safety
 - **PPV for pathogenic calls**: **0.55 → 0.92** (post-ETHICS ensemble + curations).  
-- **Sensitivity**: **0.91 → 0.88** (small, controlled tradeoff to raise PPV while maintaining sensitivity for actionable variants).  
+- **Sensitivity** (local validation): **0.91 → 0.88** (small, controlled tradeoff to raise PPV while maintaining sensitivity for actionable variants; the vendor's claimed 0.92 was never reproduced locally).  
 - **Override rate at tumor boards**: **37% → 9%**.  
 - **Number of inappropriate treatment recommendations averted**: estimated **7 → 0** clinically significant near-misses in the first 12 months post-fix.  
 - **Turnaround time (median)**: **14 days → 7 days**.
 
 ### Equity & calibration
-- PPV for non-European ancestry samples: **0.41 → 0.86** (major improvement after augmentation and ancestry-aware calibration).  
+- PPV for non-European ancestry samples: **0.41 → 0.89**, against **0.93** for European ancestry — a 4 pp gap, within the Gate 2 limit of 5 pp (was 19 pp).  
 - Calibration (ECE on pathogenicity probability): **8.3% → 1.8%**.
 
 ### Operational & economic
@@ -97,6 +97,15 @@ A comprehensive remediation program was established involving Laboratory Medicin
 ### Privacy & security
 - Incidents of unauthorized vendor access: **1** pre-ETHICS → **0** post-ETHICS (after on-prem gateway).  
 - GDPR/HIPAA compliance audit: no outstanding findings after consent harmonization and access controls.
+
+---
+
+## What the team continues to monitor
+
+- PPV is monitored at 0.92, with molecular pathologist sign-off required before any pathogenic call is reported.
+- The 4pp ancestry gap is tracked against Gate 2, and reference-set augmentation for under-represented ancestries continues.
+- Annotation snapshots are frozen for reproducibility and revalidated on a fixed cadence as ACMG-AMP criteria and ClinVar assertions evolve.
+- The FDA SaMD documentation package is progressing, strengthening the regulatory position for future commercialization.
 
 ---
 

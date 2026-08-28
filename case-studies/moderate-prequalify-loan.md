@@ -18,7 +18,7 @@ However, the project soon ran into **serious performance, trust, and compliance 
 - Stakeholders had no visibility into **why applicants were rejected or accepted**.  
 - Explanations were generic ("insufficient eligibility"), offering **no actionable insights**.  
 
-### **Human-centered**
+### **Human-Centered**
 - Applicants received **rigid, robotic responses**, often mismatched to tone of voice expected in financial advisory.  
 - The assistant failed to recognize sensitive contexts (e.g., applicants mentioning financial hardship), creating **negative user experiences**.  
 
@@ -48,7 +48,7 @@ However, the project soon ran into **serious performance, trust, and compliance 
 - Implemented **model explainability dashboards** (SHAP + feature contributions).  
 - Every applicant now receives a **reason code report** ("Rejected due to debt-to-income ratio > 60%") rather than a vague message.  
 
-### **Human-centered**
+### **Human-Centered**
 - Responses were rewritten into **clear, empathetic language**, aligned with company tone:  
   - Before: *"Your eligibility is insufficient."*  
   - After: *"Based on current income and debt levels, this loan may not be a good fit right now. Here are some next steps you can take…"*.  
@@ -69,7 +69,7 @@ However, the project soon ran into **serious performance, trust, and compliance 
 - Stopped sending raw PII to external APIs.  
 - Replaced with **hashed or anonymized tokens** for enrichment.  
 - Added **access controls + encryption at rest and in transit**.  
-- Post-remediation audits confirmed **zero third-party data leakage**.  
+- Post-remediation audits confirmed **no applicant PII reaching third-party services**, with enrichment limited to hashed tokens.  
 
 ---
 
@@ -86,10 +86,19 @@ However, the project soon ran into **serious performance, trust, and compliance 
 
 ---
 
+## What the team continues to monitor
+
+- The assistant pre-qualifies rather than decides, and accuracy is monitored at 83% with declines always reaching a human.
+- Overrides are sampled for correctness so the drop from 46% to 12% reflects decision quality rather than deference.
+- Reason codes are re-tested against policy overlays whenever those overlays change, keeping the stated reason aligned with the operative basis.
+- Enrichment runs on hashed tokens, with the provider's data handling reviewed annually.
+
+---
+
 ## Lessons Learned
 - **Performance metrics must go beyond training AUC/loss**; real-world calibration and subgroup fairness are essential.  
 - **Transparency and imputability** turn AI from a black box into a tool analysts can trust and debug.  
-- **Human-centered design** not only improves adoption but directly impacts customer trust.  
+- **Human-Centered design** not only improves adoption but directly impacts customer trust.  
 - **Security** must be baked into AI pipelines; unchecked third-party integrations can create hidden liabilities.  
 - ETHICS helped transform a risky, opaque assistant into a **performant, auditable, empathetic, and secure system**.  
 

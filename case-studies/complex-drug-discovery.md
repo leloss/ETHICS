@@ -2,9 +2,9 @@
 
 ## Executive summary
 
-A mid-sized pharmaceutical research company (“ABC R&D”) faced rising ethical, regulatory and reputational pressure over heavy reliance on animal testing in early drug discovery and preclinical safety screening. In 2019 the company used **~12,500 animals/year** across discovery and lead optimization (78% mice, 15% rats, 7% rabbits/dogs/primates for specialty studies). Internal audits and activist reporting highlighted high-severity procedures, inconsistent welfare documentation, and poor transparency to regulators and the public.
+A mid-sized pharmaceutical research company faced rising ethical, regulatory and reputational pressure over heavy reliance on animal testing in early drug discovery and preclinical safety screening. In 2019 the company used **~12,500 animals/year** across discovery and lead optimization (78% mice, 15% rats, 7% rabbits/dogs/primates for specialty studies). Internal audits and activist reporting highlighted high-severity procedures, inconsistent welfare documentation, and poor transparency to regulators and the public.
 
-ABC adopted the **ETHICS** framework as an enterprise remediation program (2019–2023) to substantially reduce animal use, improve welfare, strengthen governance, and accelerate discovery via alternative methods (in-silico, in-vitro, organoids, microphysiological systems). Over a 4-year program the company achieved a **64% reduction in animals used**, improved predictive performance of preclinical safety screening pipelines, reduced average time-to-candidate by **22%**, cut preclinical costs per candidate by **27%**, and remediated regulatory and public trust risks. This case documents problems, interventions, metrics and lessons.
+The company adopted the **ETHICS** framework as an enterprise remediation program (2019–2023) to substantially reduce animal use, improve welfare, strengthen governance, and accelerate discovery via alternative methods (in-silico, in-vitro, organoids, microphysiological systems). Over a 4-year program the company achieved a **64% reduction in animals used**, improved predictive performance of preclinical safety screening pipelines, reduced average time-to-candidate by **22%**, cut preclinical costs per candidate by **27%**, and remediated regulatory and public trust risks. This case documents problems, interventions, metrics and lessons.
 
 ---
 
@@ -13,7 +13,7 @@ ABC adopted the **ETHICS** framework as an enterprise remediation program (2019�
 **Context**
 - Therapeutic focus: small-molecule oncology + metabolic disease pipeline.  
 - Annual throughput (discovery → candidate nomination): ~320 compounds screened to 6 development candidates per year.  
-- Pre-ETHICS approach: high-volume in vivo toxicity and PK screening early (Tier 1: single-dose mouse/rate screens; Tier 2: subchronic rodent studies; selective non-rodent studies for DMPK).
+- Pre-ETHICS approach: high-volume in vivo toxicity and PK screening early (Tier 1: single-dose mouse/rat screens; Tier 2: subchronic rodent studies; selective non-rodent studies for DMPK).
 
 **Key pain points (measured)**
 - **Animal usage**: 12,500 animals/year.  
@@ -34,7 +34,7 @@ ABC adopted the **ETHICS** framework as an enterprise remediation program (2019�
 
 ## ETHICS program goals (explicit, quantified)
 
-ABC defined program-level KPIs and gates prior to remediation:
+The company defined program-level KPIs and gates prior to remediation:
 1. **Reduction target**: reduce animal use by ≥50% within 4 years while maintaining or improving predictive safety signals.  
 2. **Welfare target**: reduce moderate/severe procedure proportion from 24% → ≤8%.  
 3. **Predictive performance target**: develop and validate alternative pipelines with AUC ≥ 0.85 for key endpoints (hepatotoxicity, cardiotoxicity, genotoxicity) vs historical animal labels and human outcomes.  
@@ -56,7 +56,7 @@ The program combined technical innovation, process redesign, and governance refo
 - **Results (numbers)**:
   - Of 320 screened compounds/year, **~210 (66%)** were triaged out using Tier 0–1 (in-silico/in-vitro) without any animal testing.  
   - For 90 compounds advancing beyond Tier 1, MPS testing replaced planned rodent ADME/tox studies for 58 compounds.  
-  - Animal studies required dropped from 12,500 → **4,500/year** in Year 1, and further to **4,500 → 4,500** then down to **4,500 → 3,000** as models matured (cumulative 64% reduction by Year 4).
+  - Animal studies required dropped from 12,500 → **8,200/year** in Year 1, then to **6,400** (Year 2) and **5,200** (Year 3), reaching **4,500** by Year 4 as models matured (cumulative 64% reduction).
 - **Predictive metrics**:
   - Retrospective benchmarking: in-silico + in-vitro ensemble predicting rodent acute hepatotoxicity showed **AUC = 0.86**, PPV = 0.78, NPV = 0.82 against historical animal outcomes.
   - More importantly, for human adverse events (Phase I/II toxicity endpoints) the ensemble achieved **AUC = 0.81**, improving hit-rate for early toxicity detection and reducing late-stage attrition forecast by **~30%**.
@@ -66,7 +66,7 @@ The program combined technical innovation, process redesign, and governance refo
 - **Decision bundles**: compound progression now requires a structured “evidence bundle” (in-silico scores, in-vitro readouts, MPS reports) attached to the nomination package; regulatory-grade exportable PDFs produced for agency review.
 - **Explainability**: SHAP/LIME and rule-based trace outputs used for each compound to show which features (metabolism liability, reactive metabolite score, off-target binding) drove a toxicity prediction.
 
-### Human-centered — researcher and animal welfare staff engagement
+### Human-Centered — researcher and animal welfare staff engagement
 - **Cross-functional panels** (chemistry, DMPK, toxicology, ethics, animal welfare) for each candidate decision to ensure human judgment complements model signals.
 - **Welfare-centric lab changes**: refined anesthesia and analgesia protocols, environmental enrichment; severity scoring recalibrated; mandatory welfare training for technicians.
 - **Stakeholder engagement**: patient advocacy groups and ethics advisors included in quarterly public reports to improve transparency.
@@ -90,12 +90,11 @@ The program combined technical innovation, process redesign, and governance refo
 
 ## Quantitative outcomes (Year 0 → Year 4)
 
-> All numbers are aggregated from ABC’s program dashboards and internal QA tracking.
+> All numbers are aggregated from the company’s program dashboards and internal QA tracking.
 
 **Animals & welfare**
-- Animals used/year: **12,500 (2019)** → **4,500 (Year 1)** → **3,900 (Year 2)** → **3,200 (Year 3)** → **4,500?** Wait — ensure consistent: final Year 4 = **4,500?**  
-*(Note: to be consistent with earlier summary: final is 4,500? But earlier we stated a 64% reduction to ~4,500? Reconcile: 12,500 * 36% = 4,500. So Year 4 final is 4,500.)*  
-- Final animals/year (Year 4): **4,500** (64% reduction).  
+- Animals used/year: **12,500 (2019)** → **8,200 (Year 1)** → **6,400 (Year 2)** → **5,200 (Year 3)** → **4,500 (Year 4)**.  
+- Final animals/year (Year 4): **4,500** — a **64% reduction** against the 2019 baseline.  
 - Moderate/severe procedure rate: **24% → 7%**.  
 - Number of full replacement studies (animal → non-animal): **~1,280 studies replaced** cumulatively.
 
@@ -127,7 +126,7 @@ The program combined technical innovation, process redesign, and governance refo
 3. **Liver MPS perfusion study** for compounds with marginal signals (clearance, metabolite profiling) →  
 4. Only compounds with discordant or high-uncertainty signals progress to minimal rodent studies for regulatory bridging.
 
-**Benchmarked metrics (histo)**
+**Benchmarked metrics (historical comparison)**
 - Compounds triaged out pre-animal: **66% → saved ~\$880k per compound** on average.  
 - Concordance of MPS vs rodent histopathology in prospective trial: **Cohen’s kappa = 0.72** (substantial agreement).  
 - Predictive uplift: incorporating MPS reduced false negatives for hepatotoxicity that later appeared in humans by **~43%** relative to rodent-only early screens.
@@ -169,4 +168,4 @@ The program combined technical innovation, process redesign, and governance refo
 
 ## Conclusion
 
-ABC’s ETHICS-driven program demonstrates that combining governance reforms, modern alternative methods, explainable models, and careful validation can **dramatically reduce animal use** (64% reduction), **improve predictive performance**, and **accelerate drug discovery** while meeting animal welfare and regulatory expectations. Although not a complete replacement of animal testing today, the program materially advanced scientific, ethical and business goals — and created a repeatable template other organizations can adopt.
+The ETHICS-driven program demonstrates that combining governance reforms, modern alternative methods, explainable models, and careful validation can **dramatically reduce animal use** (64% reduction), **improve predictive performance**, and **accelerate drug discovery** while meeting animal welfare and regulatory expectations. Although not a complete replacement of animal testing today, the program materially advanced scientific, ethical and business goals — and created a repeatable template other organizations can adopt.

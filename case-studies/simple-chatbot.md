@@ -1,4 +1,4 @@
-# Case Study: Applying ETHICS to an RAG-based AI Chatbot
+# Case Study: Applying ETHICS to a RAG-based AI Chatbot
 
 ## Background
 A customer service team deployed a **Retrieval-Augmented Generation (RAG) AI chatbot** to answer client inquiries.  
@@ -39,7 +39,7 @@ Management decided to restructure the system around the **ETHICS Framework**.
 - Provided **confidence scores** alongside responses, allowing analysts to see when the chatbot was uncertain.  
 - Documentation of retrieval and generation pipelines was created for internal review.
 
-### **Human-centered**
+### **Human-Centered**
 - Tuned language generation to align with the company’s **tone of voice** (friendly, conversational, customer-first).  
 - Introduced **style guardrails**: answers were rewritten if they sounded overly formal, robotic, or unclear.  
 - Agents remained “in the loop” for uncertain responses, with escalation protocols in place.
@@ -72,8 +72,17 @@ Management decided to restructure the system around the **ETHICS Framework**.
 
 ---
 
+## What the team continues to monitor
+
+- Faithfulness to source is sampled continuously, since strong retrieval reduces but does not remove the risk of a confident misapplied answer.
+- Recall sits at 82% and is tracked per FAQ category, with low-recall categories queued for content work.
+- Knowledge-base freshness is now a monitored control, because a stale document produces a well-cited wrong answer.
+- Deflection is read alongside resolution and re-contact rates, so an abandoned session is not counted as a success.
+
+---
+
 ## Lessons Learned
 - Training loss alone is **not an adequate metric** for deployed AI chatbots; operational metrics like precision, recall, and FAQ accuracy must guide monitoring.  
-- Embedding **ETHICS principles**—Enhancing, Transparent, Human-centered, Imputable, Credible, and Secure—helped transform a frustrating black-box chatbot into a **trustworthy, effective assistant**.  
+- Embedding **ETHICS principles**—Enhancing, Transparent, Human-Centered, Imputable, Credible, and Secure—helped transform a frustrating black-box chatbot into a **trustworthy, effective assistant**.  
 - Imputability (logs, traceability) and transparency (citations, explanations) were particularly critical in making the system auditable and reliable.  
 - A shift from syntactic to semantic retrieval can unlock **major performance improvements** in RAG systems.  

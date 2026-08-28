@@ -21,7 +21,7 @@ The goal was to **reduce processing time** (from ~6 business days average to <3 
 - The system worked as a **black box**: analysts could not explain why certain applications were flagged “low risk.”  
 - Loan officers reported difficulty in contesting system outputs, as no rationale or model card was available.  
 
-### 3. Human-centered  
+### 3. Human-Centered  
 - Officers lost visibility into routing logic. Some complained they spent **40% more time** on escalations because borderline cases were being sent back and forth without context.  
 - Applicants received **confusing automated status updates** that did not align with actual officer review, causing reputational strain.  
 
@@ -43,16 +43,16 @@ The goal was to **reduce processing time** (from ~6 business days average to <3 
 ## ETHICS Framework Implementation  
 
 ### Enhancing  
-- Introduced **dual-threshold guardrails**: approvals expanded by **+3.5pp** without worsening Expected Loss (ΔEL = +4bps).  
+- Introduced **dual-threshold guardrails**: approvals expanded by **+3.5pp** with Expected Loss held within policy tolerance (ΔEL = +4bps).  
 - Reduced **false-negative KYC misses from 12% → 2.3%** using calibrated ensemble checks.  
 - Processing time: 2.5 days → **2.1 days average**, still faster but now compliant.  
 
 ### Transparent  
 - Added **model cards** with top 10 decision features for each risk classification.  
 - Officers received **clear explanations** (“Application routed due to missing W-2, debt-to-income >45%”).  
-- Transparency score in officer survey: **+42% increase in trust**.  
+- Officer trust (survey): **38% → 80%**, a **+42pp** increase.  
 
-### Human-centered  
+### Human-Centered  
 - Standardized officer escalation dashboards: flagged borderline cases now show **confidence intervals** and suggested resolution steps.  
 - Customer-facing status updates rewritten in plain language, reducing call-center complaints by **35%** in 2 months.  
 
@@ -68,7 +68,7 @@ The goal was to **reduce processing time** (from ~6 business days average to <3 
 
 ### Secure  
 - Enforced **end-to-end encryption** and **least-privilege access** (role-based tokens).  
-- Third-party API replaced with **internal enclave** solution; data leakage risk eliminated.  
+- Third-party API replaced with an **internal enclave**, removing customer PII from the external verification pathway entirely.  
 - Security audit: **0 critical findings vs. 6 in prior quarter**.  
 
 ---
@@ -85,7 +85,16 @@ After ETHICS adoption, the loan workflow system demonstrated measurable complian
 | TPR-gap (income groups)           | 15pp          | 4.8pp        | -68%    |
 | Audit Trail Completeness          | 42%           | 100%         | Full    |
 | Officer Trust (survey)            | 38%           | 80%          | +42pp   |
-| Critical Security Findings        | 6             | 0            | -100%   |  
+| Critical Security Findings (quarterly audit) | 6  | 0            | -100%   |  
+
+---
+
+## What the team continues to monitor
+
+- The residual 4.8pp TPR gap across income groups carries a review date and quarterly fair-lending reporting.
+- The 4bps of expected loss bought by expanding approvals is inside policy tolerance and re-tested as credit conditions change.
+- Two-person override approval is monitored for volume so the added control does not quietly deter legitimate overrides.
+- Enclave access is now a concentrated dependency, covered by its own access review and continuity plan.
 
 ---
 

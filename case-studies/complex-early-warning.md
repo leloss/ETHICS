@@ -11,9 +11,10 @@ After 9 months of operation, clinicians and quality teams reported systemic prob
 ## Problems observed (pre-ETHICS)
 
 ### Operational & clinical performance
+- Sepsis prevalence in the admitted population: **~5%**.  
 - Realized model performance on local data: **AUC = 0.72** (vendor claim 0.89).  
 - At the operational threshold selected by the vendor:  
-  - **Sensitivity = 0.60**, **Specificity = 0.85**.  
+  - **Sensitivity = 0.60**, **Specificity = 0.77**.  
   - **Alert rate = 25 alerts per 100 admissions** (target ≤ 8/100 to avoid fatigue).  
 - Median **time-to-first-antibiotic** after sepsis onset: **3.8 hours** (goal <1 hour).  
 - In-hospital **sepsis mortality** among flagged patients: **18.2%**.  
@@ -51,7 +52,7 @@ The multi-disciplinary remediation program (Clinical Ops, Data Science, IT, Lega
 - **Per-alert explanations**: integrated SHAP summaries (top 3 contributing features with direction and magnitude) into the alert card (e.g., rising lactate +1.2, systolic BP drop −0.8, HR trend +0.6).  
 - **Model cards & data cards**: published to the clinical governance portal, documenting training data timeframe, population shifts, performance per subpopulation, and known limitations.
 
-### Human-centered (fit into clinician workflow)
+### Human-Centered (fit into clinician workflow)
 - **HITL escalation**: top **5% most uncertain alerts** (closest to threshold) routed to a rapid-response nurse reviewer for confirmation prior to activating sepsis bundles.  
 - **Actionable alert design**: alerts now contained next steps (e.g., “Order lactate and blood cultures; consider 1st dose IV antibiotic within 1 hour”) and links to relevant order sets.
 
@@ -65,7 +66,7 @@ The multi-disciplinary remediation program (Clinical Ops, Data Science, IT, Lega
 
 ### Secure (privacy & data controls)
 - **On-prem inference for PHI**: moved inference pipelines and logs into the health system’s private cloud; vendor only receives hashed identifiers and aggregated metrics.  
-- **Data-use agreements** revised** with the vendor to enforce EU/State data residency, limited access, and mandatory incident notification clauses.
+- **Data-use agreements** revised with the vendor to enforce EU/State data residency, limited access, and mandatory incident notification clauses.
 
 ---
 
@@ -77,7 +78,8 @@ The multi-disciplinary remediation program (Clinical Ops, Data Science, IT, Lega
 - **AUC (local retrained model)**: **0.88** (pre-ETHICS realized 0.72).  
 - **Operational threshold results (ward/ED combined)**:  
   - **Sensitivity = 0.82** (target ≥ 0.80).  
-  - **Specificity = 0.78**.  
+  - **Specificity = 0.95** (up from 0.77; the local retrain improved discrimination enough to
+    raise sensitivity and cut alert volume at the same time).  
 - **Alert rate**: **9 alerts per 100 admissions** (down from 25/100).  
 - **False alarm reduction**: clinician-verified false-alarm fraction fell from **~72% → 28%** per reviewed alerts.
 
@@ -96,14 +98,23 @@ The multi-disciplinary remediation program (Clinical Ops, Data Science, IT, Lega
 
 ### Security & compliance
 - PHI exposure incidents: **1 confirmed** pre-ETHICS (minor breach) → **0 incidents** post-ETHICS.  
-- HIPAA/State audits: no findings after migration to on-prem inference and revised DUAs.
+- HIPAA and state privacy audits closed with **no findings in scope** following migration to on-prem inference and revised data-use agreements.
+
+---
+
+## What the team continues to monitor
+
+- Sensitivity is monitored at 0.82, with clinical suspicion and the sepsis bundle remaining the primary safety net.
+- The subgroup gap sits within the 3pp tolerance, and the underlying vitals-documentation practice is being addressed as a workflow improvement.
+- Local retraining ties performance to this health system's data, so each site revalidates before any threshold change.
+- On-prem inference brought availability and patching in-house, covered by the health system's existing clinical-systems runbook.
 
 ---
 
 ## Lessons & Considerations
 
 - **Local validation is essential**: vendor metrics rarely translate directly—local data distribution, documentation practices, and workflows matter.  
-- **Tradeoffs are inevitable**: raising sensitivity required accepting a moderate specificity drop; ETHICS centered the tradeoff around clinical goals and operational capacity.  
+- **Tradeoffs are real, but not always where you expect**: because local retraining lifted AUC from 0.72 to 0.88, sensitivity and alert volume improved together — a better model moves both. The tradeoff the team actually accepted was operational: a standing nurse-reviewer rota for the top 5% most uncertain alerts, and slower escalation on borderline cases.  
 - **Explainability and audit logs** are non-negotiable for clinical deployments: they enabled clinicians to trust and act on alerts.  
 - **Equity monitoring** must be baked into performance gates; missing documentation biases were a root cause of subgroup gaps.  
 - **Data residency and privacy** require explicit architectural controls when vendors are involved.

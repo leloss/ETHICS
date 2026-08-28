@@ -37,7 +37,7 @@ Instead, early audits revealed **systemic compliance breaches, biased portfolio 
 
 ---
 
-### **Human-centered (Client Needs & Context)**
+### **Human-Centered (Client Needs & Context)**
 1. **Ignored risk profiles**  
    - 72% of “conservative” risk-profile clients received portfolios with **VaR (Value at Risk, 95% confidence) ≥15%**, exceeding firm policy limit of **8%**.  
    - Example: A 75-year-old client with $60M received 35% in leveraged ETFs.  
@@ -84,7 +84,7 @@ Instead, early audits revealed **systemic compliance breaches, biased portfolio 
 
 ### **Enhancing**
 - Introduced **multi-constraint optimization**:
-  - Diversification caps: max **15% illiquid assets** for clients 65+.  
+  - Diversification caps: max **15% illiquid assets** for clients 65–69, and max **10%** for clients 70+.  
   - Liquidity buffers: min **20% in highly liquid securities**.  
 - Revised risk models benchmarked against **5-year rolling historical data**, reducing return overestimation error from **+5.7% → +1.2%**.  
 
@@ -97,7 +97,7 @@ Instead, early audits revealed **systemic compliance breaches, biased portfolio 
 
 ---
 
-### **Human-centered**
+### **Human-Centered**
 - Portfolio personalization linked to **life-stage risk ladders**:
   - Clients 70+ capped at **10% high-volatility assets**.  
   - Ultra-conservative risk scores auto-enforced **VaR ≤8%**.  
@@ -122,7 +122,7 @@ Instead, early audits revealed **systemic compliance breaches, biased portfolio 
 
 ### **Secure**
 - AML/KYC gap closed with **real-time sanctions screening**.  
-- Achieved **100% data residency compliance** (Swiss data in Switzerland, EU data under GDPR).  
+- Data residency brought into compliance across all reviewed jurisdictions (Swiss client data held in Switzerland, EU data under GDPR), confirmed by the annual privacy audit.  
 - Zero flagged compliance breaches in 12 months post-remediation.  
 
 ---
@@ -140,6 +140,15 @@ Instead, early audits revealed **systemic compliance breaches, biased portfolio 
 | Client Attrition               | 19% (loss $22B AUM)                   | 5% (recovered $17B AUM)               |
 | Regulator Penalties            | €78M + SEC warnings                   | 0 sanctions post-remediation          |
 | AML/KYC Gaps                   | 12% clients incomplete                | 0% incomplete, real-time monitoring   |
+
+---
+
+## What the team continues to monitor
+
+- The residual 3% of portfolios outside suitability policy is worked through a named remediation queue with monthly reporting.
+- Age-based caps are supported by a documented exception path for clients whose liquidity and horizon differ from their cohort.
+- Regional allocation filters are reviewed periodically by compliance and regional heads rather than by the model team.
+- Client recovery continues, with $17B of the $22B in outflows returned and relationship rebuilding tracked by segment.
 
 ---
 

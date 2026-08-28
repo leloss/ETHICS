@@ -40,7 +40,7 @@ But early usage exposed **severe risks** undermining accuracy, independence, and
 
 ---
 
-### **Human-centered**
+### **Human-Centered**
 1. **Cultural and regulatory blind spots**:  
    - German auditors received reports suggesting “standard tax variance thresholds,” but German GAAP requires stricter tolerances than IFRS.  
    - Local audit teams distrusted central AI outputs.  
@@ -102,7 +102,7 @@ But early usage exposed **severe risks** undermining accuracy, independence, and
 
 ---
 
-### **Human-centered**
+### **Human-Centered**
 - Localized AI parameters by jurisdiction (e.g., stricter German GAAP thresholds).  
 - Reduced dashboard clutter: anomalies grouped into **5 core categories** (tax, revenue, cost allocation, ESG compliance, liquidity).  
 - Junior staff trained via **guided explanations in plain language**.  
@@ -127,7 +127,7 @@ But early usage exposed **severe risks** undermining accuracy, independence, and
 ### **Secure**
 - Enforced **regional data processing** (EU data stays in EU).  
 - Applied **contract redaction and pseudonymization** before any AI ingestion.  
-- Security audit confirmed **zero leaks** in post-ETHICS testing.  
+- The post-implementation security audit found **no exposure of client or supplier data** across the tested pathways, including debug and log output.  
 
 ---
 
@@ -142,6 +142,15 @@ But early usage exposed **severe risks** undermining accuracy, independence, and
 | Client Perception | Skeptical, challenged findings                   | Acceptance improved, fewer disputes               |
 | Compliance        | GDPR & data residency breaches                   | Regionalized, compliant processing                |
 | Data Security     | Supplier contracts leaked in logs                | Fully redacted, no incidents                      |
+
+---
+
+## What the team continues to monitor
+
+- A 19% false-positive rate is planned into engagement staffing and tracked per jurisdiction.
+- Cross-metric ESG checks cover modeled manipulation patterns, and the scheme library is refreshed with each regulatory cycle.
+- Localization for 14 jurisdictions is maintained on a standing calendar tied to tax and GAAP changes.
+- Partner reliance at 82% is supported by factor-level reporting so conclusions remain independently reviewable.
 
 ---
 

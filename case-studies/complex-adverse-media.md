@@ -145,7 +145,7 @@ The FCRC team deployed ETHICS not to replace, but to layer governance, visibilit
 - Vendor required to migrate from US-hosted storage to EU-only cloud zones to comply with GDPR Art. 44.  
   
 **Improvement:**  
-- Zero confirmed PII leaks in post-remediation audits.  
+- **No confirmed PII exposure** in the two post-remediation audit cycles.  
 - Compliance rating by internal Data Protection Office improved from amber → green.  
   
 ---  
@@ -154,7 +154,7 @@ The FCRC team deployed ETHICS not to replace, but to layer governance, visibilit
   
 | Metric                    | Baseline (Vendor Reported) | Baseline (Internal Reality) | Post-ETHICS |  
 |---------------------------|----------------------------|-----------------------------|-------------|  
-| Precision (FP%)           | 92% (claimed)              | 15% (85% FPs)               | 49%         |  
+| Precision                 | 92% (claimed)              | 15% (85% FPs)               | 49%         |  
 | Recall                    | >85% (claimed)             | 61%                         | 77%         |  
 | Avg. Onboarding SLA       | 5.5 days (reported)        | 7.0 days (measured)         | 5.8 days    |  
 | Analyst “usefulness” rating| N/A                       | 2.1 / 5                     | 4.0 / 5     |  
@@ -164,6 +164,15 @@ The FCRC team deployed ETHICS not to replace, but to layer governance, visibilit
   
 ---  
   
+## What the team continues to monitor
+
+- Precision at 49% is planned into analyst capacity, with the disambiguation backlog worked through the vendor roadmap.
+- The internal benchmark set is expanded each quarter to cover regional and paywalled sources the vendor indexes thinly.
+- Hashed identifiers constrain vendor matching by design, and the recall tradeoff is reviewed against privacy requirements annually.
+- Vendor cooperation is secured through contractual SLAs, with renewal used as the point of leverage.
+
+---
+
 ## Lessons Learned  
   
 - **Vendor KPIs ≠ Reality:** Without ETHICS, the vendor’s impressive stats masked deep performance and compliance issues.  

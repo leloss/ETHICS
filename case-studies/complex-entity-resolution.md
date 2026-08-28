@@ -110,6 +110,15 @@ The institution applied the **ETHICS framework** to improve its ER process witho
 
 ---
 
+## What the team continues to monitor
+
+- A 39% false-positive rate is planned into review capacity and tracked against the monthly target.
+- Attribute weights are reviewed by region so naming conventions and transliteration differences are handled explicitly.
+- The 500-case golden set is expanded and rebalanced each cycle to keep measured recall representative of live traffic.
+- Vendor dependency is recorded in the risk register with an exit assessment refreshed at each contract renewal.
+
+---
+
 ## Broader Impact  
 
 - **Regulatory Alignment**: Improved alignment with **FATF guidance on beneficial ownership transparency** and **GDPR Article 5 (data minimization)**.  

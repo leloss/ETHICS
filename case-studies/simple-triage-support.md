@@ -13,7 +13,7 @@ A regional hospital deployed a machine-learning triage support tool in its Emerg
 ## ETHICS (applied simply)
 - **Enhancing**: Move from single-metric accuracy to clinically meaningful outcomes — sensitivity for deterioration, time-to-intervention, and clinician workload. Rebalanced thresholding to prioritize early detection (sensitivity) for high-risk patients while controlling alert volume.
 - **Transparent**: Surface concise, local explanations (e.g., “Score driven by rising respiratory rate, SpO₂ drop, and increasing lactate”) using model-agnostic explainers limited to clinically relevant features.
-- **Human-centered**: Integrate the tool into existing triage workflows as decision-support only; require nurse confirmation for any automated escalation and provide quick-action buttons (acknowledge, escalate, defer).
+- **Human-Centered**: Integrate the tool into existing triage workflows as decision-support only; require nurse confirmation for any automated escalation and provide quick-action buttons (acknowledge, escalate, defer).
 - **Imputable**: Log all model scores, inputs (hashed), clinician decisions and timestamps. Add a simple RACI map: triage nurse (decision), ED physician (override), clinical data science (model owner), compliance (auditor).
 - **Credible**: Implement prospective monitoring (daily) of sensitivity/specificity and periodic clinical validation with a multidisciplinary panel. Add a small challenger model to detect drift.
 - **Secure**: Apply data minimization (only necessary vitals & coded notes), encrypt logs, and remove raw identifiers from analyst environments. Implement role-based access for clinicians vs. analysts.
@@ -23,6 +23,15 @@ A regional hospital deployed a machine-learning triage support tool in its Emerg
 - Sensitivity for 6-hour deterioration rose from 0.62 → 0.81 at operational thresholds.
 - Nurse override rate decreased from 36% → 14% after adding explanations and simple workflows.
 - Time from alert to bedside evaluation decreased by 22%.
+
+## What the team continues to monitor
+
+- Sensitivity is monitored at 0.81, and nurse escalation remains the primary path so the tool supplements clinical judgment rather than gating it.
+- Override rates are segmented by shift and experience level to distinguish earned trust from automation bias as the baseline builds.
+- Deterioration labels come from documented events, so the QA panel reviews a sample of undocumented cases each month.
+- A controlled pilot is running to measure length-of-stay and ICU-transfer effects.
+
+---
 
 ## Next Steps
 - Run a controlled pilot comparing outcomes (length of stay, ICU transfers) with matched controls.

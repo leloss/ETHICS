@@ -18,7 +18,7 @@ model risk methodology you can run.
 |---|---|
 | **Governance artifacts** | Model card, data card, GenAI system card, adverse action reason card, validation report |
 | **ETHICS System X-Ray** | 42-checkpoint self-assessment scored on evidence, producing ATS → PTS → interpretation band |
-| **ML model risk management** | Inventory, risk tiering, development documentation, validation, approval, findings, monitoring, incidents, change control, third-party due diligence — structured on SR 11-7 / SS1/23 |
+| **AI/ML model risk management** | Inventory, risk tiering, development documentation, validation, approval, findings, monitoring, incidents, change control, third-party due diligence — structured on SR 11-7 / SS1/23 |
 | **MRM Lite** | One-page governance for small teams and low-tier models, with explicit triggers for when to move up |
 | **Automated gates** | Performance, calibration, fairness, and drift thresholds that fail a build when breached |
 | **20 case studies** | Banking, AML, insurance, healthcare, genomics, drug discovery, and trading, graded simple → moderate → complex |
@@ -166,7 +166,7 @@ Articles on Imputable, Credible, and Secure are in preparation.
 
 [1] Leandro A. Loss, *ETHICS: A Six-Pillar Framework for Responsible AI in Highly Regulated Industries*, 2026.
 
-[2] Leandro A. Loss, *ETHICS: A Six-Pillar Framework for Responsible AI in Finance*, The 2nd Workshop on LLMs and Generative AI for Finance (ACM ICAIF'25), 2025.
+[2] Leandro A. Loss, *ETHICS: A Six-Pillar Framework for Responsible AI in Finance*, The 2nd Workshop on LLMs and Generative AI for Finance (ACM ICAIF'26), 2026.
 
 ## Open-source tools referenced
 

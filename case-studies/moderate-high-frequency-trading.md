@@ -86,6 +86,15 @@ The bank implemented the **ETHICS framework** to realign HFT practices with gove
 
 ---
 
+## What the team continues to monitor
+
+- Pre-trade risk checks are the real-time control; the oversight committee reviews after the fact, which is the appropriate division at microsecond speeds.
+- Liquidity minimums and cancellation limits are recalibrated quarterly to keep market-quality obligations and legitimate risk management in balance.
+- Explanations reconstruct which inputs drove an order and are used for review rather than as the system's own rationale.
+- Stress scenarios are extended each cycle, with correlated cross-firm behavior tracked through market-wide indicators.
+
+---
+
 ## Broader Impact  
 
 - **Internal culture shift**: Algorithms were no longer viewed as untouchable “black boxes,” but as models subject to **human governance**.  
