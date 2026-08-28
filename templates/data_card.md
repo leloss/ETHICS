@@ -1,4 +1,7 @@
 # Data Card — {{DATASET_NAME}} (v{{VERSION}})  
+- Used by model(s): {{MODEL_ID(s)}} | Data owner: {{NAME}} | Date: {{DATE}}  
+- Related: [model card](model_card.md) · [development document](mrm/model_development_document.md) · [monitoring plan](mrm/ongoing_monitoring_plan.md)  
+- Upstream change notification: who tells the model owner when a source, schema, or definition changes: {{NAME/PROCESS}}  
 - Sources/timeframe: {{SOURCES}}, {{DATES}}  
 - Collection/consent/legal basis: {{...}}  
 - Schema (target, features, IDs, PII): {{...}}  

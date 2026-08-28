@@ -1,5 +1,7 @@
-# Model Card — {{MODEL_NAME}} (v{{MODEL_VERSION}})  
+# Model Card — {{MODEL_ID}} / {{MODEL_NAME}} (v{{MODEL_VERSION}})  
 - Owners: {{TEAM}} | Email: {{CONTACT}} | Date: {{DATE}}  
+- Related: [data card](data_card.md) · [GenAI system card](genai_system_card.md) (if applicable) · [adverse action card](adverse_action_card.md) · [development document](mrm/model_development_document.md) · [validation report](validation_report.md) · [X-Ray](checklists/ethics_xray.md)  
+- Purpose: the summary record of what the model is and how it behaves. The reasoning behind the choices lives in the development document; this card is what a reviewer reads first.  
 - Use case: {{INTENDED_USE}} | Out of scope: {{OUT_OF_SCOPE}}  
 - Decision criticality/risk tier: {{TIER}} | Regulatory scope: {{REGULATIONS}}  
   

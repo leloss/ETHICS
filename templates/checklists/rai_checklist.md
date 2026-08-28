@@ -1,8 +1,14 @@
 # ETHICS RAI Checklist (Pre‑deploy / Periodic)  
   
+Model ID: {{MODEL_ID}} | Version: {{MODEL_VERSION}} | Tier: {{TIER}} | Date: {{DATE}}  
+  
 Companion to the ETHICS System X-Ray (`ethics_xray.md` / `ethics_xray.csv`): this list is
 the pre-deploy gate; the X-Ray is the 0-3 evidence score that produces the ATS/PTS and the
 Interpretation Guidance Band. Record the X-Ray band alongside the approvals below.  
+  
+Both run at lifecycle stage 3 of the [MRM methodology](../mrm/README.md), before independent
+validation. Findings raised here are logged in [model_findings_log.csv](../mrm/model_findings_log.csv)
+so that self-assessment and validation feed one remediation queue rather than two.  
   
 - Enhancing  
   - [ ] Clear problem statement, stakeholders, success metrics  

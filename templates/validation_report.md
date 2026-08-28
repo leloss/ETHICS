@@ -1,5 +1,7 @@
-# Independent Validation Report — {{MODEL_NAME}} (v{{MODEL_VERSION}})  
-Decision: {{Approve/Approve with conditions/Reject}} | Date: {{DATE}} | Validator: {{NAME}}, Independent of dev.  
+# Independent Validation Report — {{MODEL_ID}} / {{MODEL_NAME}} (v{{MODEL_VERSION}})  
+Decision: {{Approve / Approve with conditions / Approve for restricted use / Reject / Defer}} | Date: {{DATE}} | Validator: {{NAME}}, independent of development.  
+- Tier: {{TIER}} | Agreed scope: [validation plan](mrm/validation_plan.md) | Findings recorded in: [findings log](mrm/model_findings_log.csv)  
+- Evidence reviewed: [development document](mrm/model_development_document.md) · [model card](model_card.md) · [data card](data_card.md) · [GenAI system card](genai_system_card.md) · [X-Ray](checklists/ethics_xray.md)  
   
 ## Scope and Conceptual Soundness  
 - Use-case fit, risk tier, regulatory scope: {{...}}  

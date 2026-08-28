@@ -1,5 +1,6 @@
-# GenAI System Card — {{SYSTEM_NAME}} (v{{SYSTEM_VERSION}})
+# GenAI System Card — {{MODEL_ID}} / {{SYSTEM_NAME}} (v{{SYSTEM_VERSION}})
 - Owners: {{TEAM}} | Email: {{CONTACT}} | Date: {{DATE}}
+- Related: [model card](model_card.md) · [data card](data_card.md) · [validation report](validation_report.md) · [change control](mrm/change_control.md) · [third-party due diligence](mrm/third_party_model_due_diligence.md) if the base model is a vendor's
 - Use case: {{INTENDED_USE}} | Out of scope: {{OUT_OF_SCOPE}}
 - Decision criticality/risk tier: {{TIER}} | Regulatory scope: {{REGULATIONS}}
 

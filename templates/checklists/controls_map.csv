@@ -6,3 +6,15 @@ H-HITL,Human-Centered,Human override and adverse action workflows,M,Governance,7
 S-SBOM,Secure,SBOM and vuln scanning in CI,MG,Governance,8.2 Security,"GLBA-Safeguards"  
 T-TRACE,Imputable,Versioning and audit trails,M,Model Risk Governance,7.7 Documentation,""  
 G-XRAY,All pillars,ETHICS System X-Ray scored with evidence; IGB band recorded per version,GOVERN/MAP/MEASURE,Model Risk Governance,6 Governance,""
+M-INV,Imputable,All in-scope models registered in inventory before influencing a decision,GOVERN,Model Inventory,6.2 Governance,""  
+M-TIER,Imputable,Model risk tiering assigned at intake and confirmed by 2LOD,MAP,Model Risk Governance,6.4 Risk assessment,""  
+M-CSND,Credible,Conceptual soundness documented with alternatives considered,MAP/MEASURE,Model Development,7.4 Design,""  
+M-IVAL,Credible,Independent validation with effective challenge before deployment,MEASURE,Model Validation,7.5 Verification,""  
+M-FIND,Imputable,Validation findings tracked to closure with evidence and due dates,MANAGE,Model Validation,6.5 Treatment,""  
+M-MON,Credible,Ongoing monitoring operating against defined thresholds and breach actions,MEASURE/MANAGE,Ongoing Monitoring,8.3 Monitoring,""  
+M-USE,Human-Centered,Use monitored against approved intended use; override and review conditions tracked,MANAGE,Model Use,7.6 Human oversight,GDPR-22  
+M-CHG,Imputable,Material change assessed and re-validated before release,MANAGE,Change Management,7.7 Documentation,""  
+M-RECERT,Credible,Periodic recertification confirms the approval still holds,MEASURE,Model Risk Governance,8.4 Review,""  
+M-TPRM,Secure,Third-party model due diligence with independent testing on institution data,GOVERN/MANAGE,Vendor Models,8.2 Security,GLBA-Safeguards  
+M-APPET,Imputable,Model risk appetite defined with observable limits and breach actions,GOVERN,Model Risk Governance,6.3 Objectives,""  
+M-RETIRE,Imputable,Decommissioning evidenced; retained decisions and appeals addressed,MANAGE,Model Risk Governance,8.5 Retirement,""  

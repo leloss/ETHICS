@@ -6,6 +6,7 @@
 | Field | Value |
 |---|---|
 | Business Unit | {{BUSINESS_UNIT}} |
+| Model ID | {{MODEL_ID}} — matches [model_inventory.csv](../mrm/model_inventory.csv) |
 | Model / System Name | {{SYSTEM_NAME}} |
 | Version | {{VERSION}} |
 | Intended Use / Scope | {{INTENDED_USE}} |

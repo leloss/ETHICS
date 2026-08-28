@@ -1,5 +1,7 @@
-# Adverse Action Reason Card — {{MODEL_NAME}} (v{{MODEL_VERSION}})  
+# Adverse Action Reason Card — {{MODEL_ID}} / {{MODEL_NAME}} (v{{MODEL_VERSION}})  
 Purpose: Document how adverse action reasons are generated and governed (ECOA/Reg B, FCRA).  
+- Related: [model card](model_card.md) — see its Explanation Pathways by Audience table, of which this card is the affected-person row · [GenAI system card](genai_system_card.md) if reasons are rendered by an LLM · [validation report](validation_report.md)  
+- Where reasons are rendered in natural language by a generative component, the reason must originate in the decision system; the generator may render it but not produce it.  
   
 ## Scope and Context  
 - Decision type: {{e.g., credit approval/limit adjustment}}  
