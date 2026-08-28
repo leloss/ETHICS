@@ -1,0 +1,4 @@
+# Optional ecosystem tools referenced in the README. Not imported by any script in
+# scripts/, so install these only if you are wiring up the wider tooling yourself.
+evidently==0.4.36
+great-expectations==1.1.3
